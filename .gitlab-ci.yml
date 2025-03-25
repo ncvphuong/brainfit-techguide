@@ -1,0 +1,36 @@
+image: node:18
+
+default:
+  tags:
+    - deploy
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - apt-get update && apt-get install -y openssh-client rsync
+  - mkdir -p ~/.ssh
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+
+deploy:
+  stage: deploy
+  only:
+    - master
+  script:
+    - ssh $DEPLOY_USER@$DEPLOY_HOST 'bash /home/deploynode/tech-guide-brainfit/deploy.sh'
