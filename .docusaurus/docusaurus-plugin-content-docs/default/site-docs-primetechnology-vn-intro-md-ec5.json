@@ -1,0 +1,24 @@
+{
+  "id": "primetechnology.vn/prime-technology",
+  "title": "Giới thiệu về Prime Technology",
+  "description": "Technology-as-a-Service since 2014",
+  "source": "@site/docs/primetechnology.vn/intro.md",
+  "sourceDirName": "primetechnology.vn",
+  "slug": "/prime-technology",
+  "permalink": "/docs/prime-technology",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/primetechnology.vn/intro.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "prime-technology",
+    "title": "Giới thiệu về Prime Technology",
+    "slug": "/prime-technology"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Suspend Student",
+    "permalink": "/docs/brainfitstudio.com/suspend_student"
+  }
+}
