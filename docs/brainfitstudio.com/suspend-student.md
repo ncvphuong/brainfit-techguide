@@ -2,7 +2,7 @@
 id: suspend-student
 title: Suspend Student
 sidebar_label: Suspend Student
-sidebar_position: 1
+sidebar_position: 3
 ---
 # Suspend Student
 1. Navigate to [ACP Brainfit Studio](https://acp.brainfitstudio.com/acp/)

@@ -1,3 +1,4 @@
+sidebar_position: 2
 # Merge Score Guide
 
 ## Steps to Merge Scores

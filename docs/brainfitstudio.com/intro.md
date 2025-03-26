@@ -2,7 +2,7 @@
 id: brainfit-singapore
 title: BrainFit Singapore Overview
 slug: /brainfit-singapore
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # BrainFit Singapore
