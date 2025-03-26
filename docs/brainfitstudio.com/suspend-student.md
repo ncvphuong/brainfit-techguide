@@ -1,3 +1,8 @@
+---
+id: suspend-student
+title: Suspend Student
+slug: /suspend-student
+---
 # Suspend Student
 1. Navigate to [ACP Brainfit Studio](https://acp.brainfitstudio.com/acp/)
 2. Click **"Students"**
