@@ -1,7 +1,7 @@
 ---
 id: suspend-student
 title: Suspend Student
-slug: /suspend-student
+sidebar_label: Suspend Student
 sidebar_position: 1
 ---
 # Suspend Student
