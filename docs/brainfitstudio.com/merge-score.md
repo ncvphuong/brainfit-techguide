@@ -1,6 +1,5 @@
 # Merge Score Guide
 
-## Steps to Merge Scores
 
 1. **Login** with an admin account.  
 2. Click **"CogMaps V2"**.  
