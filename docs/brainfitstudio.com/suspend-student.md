@@ -2,6 +2,7 @@
 id: suspend-student
 title: Suspend Student
 slug: /suspend-student
+sidebar_position: 1
 ---
 # Suspend Student
 1. Navigate to [ACP Brainfit Studio](https://acp.brainfitstudio.com/acp/)

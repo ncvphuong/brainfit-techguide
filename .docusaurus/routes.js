@@ -114,25 +114,19 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '3c5'),
+    component: ComponentCreator('/docs', '60d'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '47a'),
+        component: ComponentCreator('/docs', '931'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', 'be7'),
+            component: ComponentCreator('/docs', 'f1a'),
             routes: [
               {
                 path: '/docs/brainfit-singapore',
                 component: ComponentCreator('/docs/brainfit-singapore', '61f'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/brainfitstudio.com/suspend_student',
-                component: ComponentCreator('/docs/brainfitstudio.com/suspend_student', '89b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -157,6 +151,12 @@ export default [
               {
                 path: '/docs/prime-technology',
                 component: ComponentCreator('/docs/prime-technology', 'd1b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/suspend-student',
+                component: ComponentCreator('/docs/suspend-student', '0d4'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

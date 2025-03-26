@@ -11,18 +11,20 @@
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/brainfitstudio.com/intro.md",
   "tags": [],
   "version": "current",
+  "sidebarPosition": 2,
   "frontMatter": {
     "id": "brainfit-singapore",
     "title": "BrainFit Singapore Overview",
-    "slug": "/brainfit-singapore"
+    "slug": "/brainfit-singapore",
+    "sidebar_position": 2
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Translate your site",
-    "permalink": "/docs/tutorial-extras/translate-your-site"
+    "title": "Suspend Student",
+    "permalink": "/docs/suspend-student"
   },
   "next": {
-    "title": "Suspend Student",
-    "permalink": "/docs/brainfitstudio.com/suspend_student"
+    "title": "Giới thiệu về Prime Technology",
+    "permalink": "/docs/prime-technology"
   }
 }

@@ -249,26 +249,22 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-3c5": {
+  "/docs-60d": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---docsaba-d7c"
     }
   },
-  "/docs-47a": {
+  "/docs-931": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---docs-005-788"
   },
-  "/docs-be7": {
+  "/docs-f1a": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/docs/brainfit-singapore-61f": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-brainfit-singaporedd-6-6f5"
-  },
-  "/docs/brainfitstudio.com/suspend_student-89b": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-brainfitstudio-com-suspend-studentb-87-095"
   },
   "/docs/category/tutorial---basics-20e": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -285,6 +281,10 @@
   "/docs/prime-technology-d1b": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-prime-technologyec-5-0cd"
+  },
+  "/docs/suspend-student-0d4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-suspend-studentaf-7-f02"
   },
   "/docs/tutorial-basics/congratulations-458": {
     "__comp": "__comp---theme-doc-item-178-a40",
