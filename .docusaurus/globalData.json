@@ -11,8 +11,73 @@
           "mainDocId": "intro",
           "docs": [
             {
+              "id": "brainfitstudio.com/add-comment-attach-file",
+              "path": "/docs/brainfitstudio.com/add-comment-attach-file",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "brainfitstudio.com/brainfit-singapore",
               "path": "/docs/brainfit-singapore",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "brainfitstudio.com/delete-session-score",
+              "path": "/docs/brainfitstudio.com/delete-session-score",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "brainfitstudio.com/generate-explanation-quiz",
+              "path": "/docs/brainfitstudio.com/generate-explanation-quiz",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "brainfitstudio.com/import-quiz-ab",
+              "path": "/docs/brainfitstudio.com/import-quiz-ab",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "brainfitstudio.com/input-score-baby",
+              "path": "/docs/brainfitstudio.com/input-score-baby",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "brainfitstudio.com/merge-score",
+              "path": "/docs/brainfitstudio.com/merge-score",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "brainfitstudio.com/print-cmv2-report",
+              "path": "/docs/brainfitstudio.com/print-cmv2-report",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "brainfitstudio.com/print-progress-report",
+              "path": "/docs/brainfitstudio.com/print-progress-report",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "brainfitstudio.com/publish-individual-course",
+              "path": "/docs/brainfitstudio.com/publish-individual-course",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "brainfitstudio.com/publish-progress-report",
+              "path": "/docs/brainfitstudio.com/publish-progress-report",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "brainfitstudio.com/publish-progress-report-progress-view",
+              "path": "/docs/brainfitstudio.com/publish-progress-report-progress-view",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "brainfitstudio.com/setup-schedule-course",
+              "path": "/docs/brainfitstudio.com/setup-schedule-course",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "brainfitstudio.com/subgame-management",
+              "path": "/docs/brainfitstudio.com/subgame-management",
               "sidebar": "tutorialSidebar"
             },
             {

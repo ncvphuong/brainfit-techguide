@@ -114,19 +114,97 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '180'),
+    component: ComponentCreator('/docs', 'a0b'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '782'),
+        component: ComponentCreator('/docs', 'a4f'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', 'd89'),
+            component: ComponentCreator('/docs', '4ed'),
             routes: [
               {
                 path: '/docs/brainfit-singapore',
                 component: ComponentCreator('/docs/brainfit-singapore', '61f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/add-comment-attach-file',
+                component: ComponentCreator('/docs/brainfitstudio.com/add-comment-attach-file', 'd67'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/delete-session-score',
+                component: ComponentCreator('/docs/brainfitstudio.com/delete-session-score', '76b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/generate-explanation-quiz',
+                component: ComponentCreator('/docs/brainfitstudio.com/generate-explanation-quiz', 'ec0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/import-quiz-ab',
+                component: ComponentCreator('/docs/brainfitstudio.com/import-quiz-ab', 'e5f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/input-score-baby',
+                component: ComponentCreator('/docs/brainfitstudio.com/input-score-baby', 'b7c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/merge-score',
+                component: ComponentCreator('/docs/brainfitstudio.com/merge-score', 'b0d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/print-cmv2-report',
+                component: ComponentCreator('/docs/brainfitstudio.com/print-cmv2-report', 'b26'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/print-progress-report',
+                component: ComponentCreator('/docs/brainfitstudio.com/print-progress-report', '137'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/publish-individual-course',
+                component: ComponentCreator('/docs/brainfitstudio.com/publish-individual-course', '2e5'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/publish-progress-report',
+                component: ComponentCreator('/docs/brainfitstudio.com/publish-progress-report', '1f9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/publish-progress-report-progress-view',
+                component: ComponentCreator('/docs/brainfitstudio.com/publish-progress-report-progress-view', '84b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/setup-schedule-course',
+                component: ComponentCreator('/docs/brainfitstudio.com/setup-schedule-course', 'bf9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/brainfitstudio.com/subgame-management',
+                component: ComponentCreator('/docs/brainfitstudio.com/subgame-management', 'e7a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

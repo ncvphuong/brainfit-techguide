@@ -7,7 +7,7 @@ export default {
   "title": "BraintFit Tech Guide",
   "tagline": "BraintFit Technical Documentation",
   "favicon": "img/favicon.ico",
-  "url": "https://techguide.brainfitstudio.com",
+  "url": "https://brainfit-guide-saurus.powerdigital.sg",
   "baseUrl": "/",
   "organizationName": "facebook",
   "projectName": "docusaurus",

@@ -249,26 +249,78 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-180": {
+  "/docs-a0b": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---docsaba-d7c"
     }
   },
-  "/docs-782": {
+  "/docs-a4f": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---docs-005-788"
   },
-  "/docs-d89": {
+  "/docs-4ed": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/docs/brainfit-singapore-61f": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-brainfit-singaporedd-6-6f5"
   },
+  "/docs/brainfitstudio.com/add-comment-attach-file-d67": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-add-comment-attach-file-488-1cc"
+  },
+  "/docs/brainfitstudio.com/delete-session-score-76b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-delete-session-score-6-a-1-bf8"
+  },
+  "/docs/brainfitstudio.com/generate-explanation-quiz-ec0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-generate-explanation-quizcbd-05a"
+  },
+  "/docs/brainfitstudio.com/import-quiz-ab-e5f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-import-quiz-ab-5-a-1-ce8"
+  },
+  "/docs/brainfitstudio.com/input-score-baby-b7c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-input-score-baby-2-d-7-f9f"
+  },
+  "/docs/brainfitstudio.com/merge-score-b0d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-merge-scorea-1-c-8f7"
+  },
+  "/docs/brainfitstudio.com/print-cmv2-report-b26": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-print-cmv-2-reportac-8-5a2"
+  },
+  "/docs/brainfitstudio.com/print-progress-report-137": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-print-progress-reportace-28f"
+  },
+  "/docs/brainfitstudio.com/publish-individual-course-2e5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-publish-individual-course-829-97a"
+  },
+  "/docs/brainfitstudio.com/publish-progress-report-1f9": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-publish-progress-reportcfa-39c"
+  },
+  "/docs/brainfitstudio.com/publish-progress-report-progress-view-84b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-publish-progress-report-progress-view-51-d-746"
+  },
+  "/docs/brainfitstudio.com/setup-schedule-course-bf9": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-setup-schedule-course-7-dd-68e"
+  },
+  "/docs/brainfitstudio.com/subgame-management-e7a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-brainfitstudio-com-subgame-management-1-e-3-586"
+  },
   "/docs/brainfitstudio.com/suspend-student-826": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-suspend-studentaf-7-f02"
+    "content": "content---docs-brainfitstudio-com-suspend-studentaf-7-0f9"
   },
   "/docs/category/tutorial---basics-20e": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",

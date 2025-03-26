@@ -11,20 +11,20 @@
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/brainfitstudio.com/suspend-student.md",
   "tags": [],
   "version": "current",
-  "sidebarPosition": 1,
+  "sidebarPosition": 3,
   "frontMatter": {
     "id": "suspend-student",
     "title": "Suspend Student",
     "sidebar_label": "Suspend Student",
-    "sidebar_position": 1
+    "sidebar_position": 3
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Translate your site",
-    "permalink": "/docs/tutorial-extras/translate-your-site"
+    "title": "Merge Score CMv2",
+    "permalink": "/docs/brainfitstudio.com/merge-score"
   },
   "next": {
-    "title": "BrainFit Singapore Overview",
-    "permalink": "/docs/brainfit-singapore"
+    "title": "How to Publish Individual Assignments in ACP",
+    "permalink": "/docs/brainfitstudio.com/publish-individual-course"
   }
 }
