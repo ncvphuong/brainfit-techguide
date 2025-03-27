@@ -9,7 +9,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Overview of BrainFit, basic information, and organizational model.
+        Overview of BrainFit ACP, basic system information and general guides.
       </>
     ),
     link: '/docs/brainfit-singapore'
