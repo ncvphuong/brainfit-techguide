@@ -11,7 +11,6 @@ sidebar_position: 1
 
 Founded in 2001, **BrainFit® Singapore** is a neuroscience-based training center dedicated to enhancing cognitive and learning skills for children and youth. With over two decades of research and hands-on experience, BrainFit delivers brain-based programs that help individuals maximize their learning potential.
 
-![BrainFit Logo](https://brainfit.com.sg/wp-content/uploads/2020/01/BrainFit-Logo.png)
 
 ## 🚀 Mission
 
