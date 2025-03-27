@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'BraintFit Tech Guide',
   tagline: 'BraintFit Technical Documentation',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/BrainFit.png',
 
   // Set the production url of your site here
   url: 'https://brainfit-guide-saurus.powerdigital.sg/',
@@ -80,12 +80,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/BrainFit.png',
       navbar: {
-        title: 'My Site',
+        title: 'BraintFit Tech Guide',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'BraintFit Tech Guide Logo',
+          src: 'img/BrainFit.png',
         },
         items: [
           {
