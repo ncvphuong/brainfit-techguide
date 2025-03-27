@@ -15,7 +15,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://brainfit-guide-saurus.powerdigital.sg',
+  url: 'https://brainfit-guide-saurus.powerdigital.sg/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -149,7 +149,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://brainfit.com.sg/" target="_blank" rel="noopener noreferrer">BrainFit</a>. Operate by <a href="https://powerdigital.sg/" target="_blank" rel="noopener noreferrer">Power Digital</a>.`,
       },
       prism: {
         theme: prismThemes.github,
