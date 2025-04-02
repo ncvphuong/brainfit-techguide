@@ -121,7 +121,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://brainfit.com.sg/" target="_blank" rel="noopener noreferrer">BrainFit</a> <br>Operates by <a href="https://powerdigital.sg/" target="_blank" rel="noopener noreferrer">Power Digital</a>`,
+        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://brainfit.com.sg/" target="_blank" rel="noopener noreferrer">BrainFit</a> Group PTE. <br>Operates by <a href="https://powerdigital.sg/" target="_blank" rel="noopener noreferrer">Power Digital</a>`,
       },
       prism: {
         theme: prismThemes.github,

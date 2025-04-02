@@ -2,7 +2,7 @@
 id: print-cmv2-report
 title: How to Access and Print Student CMv2 Report
 sidebar_label: How to Access and Print Student CMv2 Report
-sidebar_position: 12
+sidebar_position: 3
 ---
 # How to Access and Print Student CMv2 Report
 

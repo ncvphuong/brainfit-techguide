@@ -2,7 +2,7 @@
 id: import-quiz-ab
 title: Importing Quiz and Publishing Image on BrainFit Studio Platform
 sidebar_label: Importing Quiz and Publishing Image on BrainFit Studio Platform
-sidebar_position: 6
+sidebar_position: 1
 ---
 # Importing Quiz and Publishing Image on BrainFit Studio Platform
 

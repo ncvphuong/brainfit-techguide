@@ -2,7 +2,7 @@
 id: print-progress-report
 title: How to Access and Print Progress Reports
 sidebar_label: How to Access and Print Progress Reports
-sidebar_position: 7
+sidebar_position: 2
 ---
 # How to Access and Print Progress Reports
 

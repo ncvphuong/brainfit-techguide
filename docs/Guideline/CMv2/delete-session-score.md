@@ -2,7 +2,7 @@
 id: delete-session-score
 title: Delete Session Score
 sidebar_label: Delete Session Score
-sidebar_position: 13
+sidebar_position: 1
 ---
 # Delete Session Score
 
