@@ -1,59 +1,62 @@
 ---
 id: publish-progress-report-progress-view
-title: How to Access and Publish SmartWorkout/SmartMoves Progress Reports
-sidebar_label: How to Access and Publish SmartWorkout/SmartMoves Progress Reports
+title: How to Publish SmartWorkout/SmartMoves Progress Reports
+sidebar_label: How to Publish SmartWorkout/SmartMoves Progress Reports
 sidebar_position: 11
 ---
-# How to Access and Publish SmartWorkout/SmartMoves Progress Reports
+# How to Publish SmartWorkout/SmartMoves Progress Reports
 
-## Steps to Access Reports  
+1.  **Navigate** to [BrainFit ACP](https://acp.brainfitstudio.com/acp).
+2.  Click **Monthly Progress Reports**.
 
-1. Navigate to [ACP Portal](https://acp.brainfitstudio.com/acp/).  
-2. Click **"Progress Reports"**.  
+![Image](./img/print-publish-progress-report-1.png)
 
-![Image](./img/publish-progress-report-progress-view-1.png)
+3.  Click **Students** in the submenu.
 
-3. Click **"SmartWorkout Progress"** or **"SmartMoves Progress"**.  
-
-![Image](./img/publish-progress-report-progress-view-2.png)
+![Image](./img/print-publish-progress-report-2.png)
 
 
-4. Click the **"Name..."** field.  
+4.  Click the **"Name"** field.
 
-![Image](./img/publish-progress-report-progress-view-3.png)
-
-
-5. Type the **student's name**.  
-6. Click the **text field** to set the **start date**. 
-
-![Image](./img/publish-progress-report-progress-view-4.png)
+![Image](./img/print-publish-progress-report-3.png)
 
 
-7. Click the **text field** to set the **end date**.  
+5.  Type the name of the student you wish to find and click **Search**.
+6.  Click on the student's name (e.g., **"Mike Pham"**) from the search results.
 
-![Image](./img/publish-progress-report-progress-view-5.png)
+![Image](./img/print-publish-progress-report-4.png)
 
 
-8. Click **"Search"**.  
+7.  Select the desired date or time range for the report.
 
-![Image](./img/publish-progress-report-progress-view-6.png)
+![Image](./img/print-publish-progress-report-5.png)
 
+
+8.  Click the **View** button to generate the report based on the selected criteria.
+
+![Image](./img/print-publish-progress-report-6.png)
+
+
+9.  Click on either **Progress Report** or **Completion Report** to select the type of report you want to publish.
+
+![Image](./img/print-publish-progress-report-7.png)
 
 
 ## Steps to Upload and Publish Reports  
 
 9. Click **here**.  
 
-![Image](./img/publish-progress-report-progress-view-7.png)
+![Image](./img/print-publish-progress-report-9.png)
+
+10. Click **Save** in the download dialog to save the report to your computer if you don’t already have the file. Or click **Cancel** to skip the download if you already have the file.
+
+11. Click **"Drop files here to upload"** and choose the file.  
+
+![Image](./img/print-publish-progress-report-10.png)
 
 
-10. Click **"Drop files here to upload"** and choose the file.  
+12. Click **"Publish"**.  
 
-![Image](./img/publish-progress-report-progress-view-8.png)
-
-
-11. Click **"Publish"**.  
-
-![Image](./img/publish-progress-report-progress-view-9.png)
+![Image](./img/print-publish-progress-report-11.png)
 
 

@@ -1,52 +1,52 @@
 ---
 id: print-progress-report
-title: How to Access and Print Progress Reports
-sidebar_label: How to Access and Print Progress Reports
+title: How to Access and Print Progress/Completion Reports
+sidebar_label: How to Access and Print Progress/Completion Reports
 sidebar_position: 2
 ---
-# How to Access and Print Progress Reports
+## Accessing and Printing Progress/Completion Reports
 
-## Steps to Access a Progress Report
+1.  **Navigate** to [BrainFit ACP](https://acp.brainfitstudio.com/acp).
+2.  Click **Monthly Progress Reports**.
 
-1. Navigate to [ACP Portal](https://acp.brainfitstudio.com/acp/).  
-2. Click **"Progress Reports"**.  
+![Image](./img/print-publish-progress-report-1.png)
 
-![Image](./img/print-progress-report-1.png)
+3.  Click **Students** in the submenu.
 
-
-3. Click **"SmartWorkout Progress"** or **"SmartMoves Progress"**.  
-
-![Image](./img/print-progress-report-2.png)
+![Image](./img/print-publish-progress-report-2.png)
 
 
-4. Click the **"Name..."** field.  
+4.  Click the **"Name"** field.
 
-![Image](./img/print-progress-report-3.png)
-
-
-5. Type the **student's name**.  
-6. Click the **date field**.  
-
-![Image](./img/print-progress-report-4.png)
+![Image](./img/print-publish-progress-report-3.png)
 
 
-7. Select the **start date**.  
-8. Select the **end date**.  
+5.  Type the name of the student you wish to find and click **Search**.
+6.  Click on the student's name (e.g., **"Mike Pham"**) from the search results.
 
-![Image](./img/print-progress-report-5.png)
-
-
-9. Click **"Search"**.  
-
-![Image](./img/print-progress-report-6.png)
+![Image](./img/print-publish-progress-report-4.png)
 
 
+7.  Select the desired date or time range for the report.
 
-## Steps to Print or Save the Report  
-
-10. Click **here**. 
-
-![Image](./img/print-progress-report-7.png)
+![Image](./img/print-publish-progress-report-5.png)
 
 
-11. Select a **download folder** and **save** the report.  
+8.  Click the **View** button to generate the report based on the selected criteria.
+
+![Image](./img/print-publish-progress-report-6.png)
+
+
+9.  Click on either **Progress Report** or **Completion Report** to select the type of report you want to print.
+
+![Image](./img/print-publish-progress-report-7.png)
+
+
+10. Click here to **download** the report.
+
+![Image](./img/print-publish-progress-report-8.png)
+
+
+11. Click **Save** in the download dialog to save the report to your computer.
+
+12. Select the desired folder on your computer where you want to save the report. Once saved, open the file and use your computer's print function (File > Print or Ctrl+P/Cmd+P) to print the report.
