@@ -5,6 +5,7 @@ sidebar_label: Management Master User Account
 sidebar_position: 2
 ---
 ## Creating a Master User Account
+This feature is for SA, ML
 
 1. **Navigate** to [BrainFit ACP](https://acp.brainfitstudio.com/acp).
 2. Click **Accounts** in the navigation menu.

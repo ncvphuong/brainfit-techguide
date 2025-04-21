@@ -5,6 +5,7 @@ sidebar_label: How to Access and Print Student CMv2 Report
 sidebar_position: 3
 ---
 # How to Access and Print Student CMv2 Report
+This feature is for SA, ML, CA, Trainer
 
 ## Steps to Access the Report  
 

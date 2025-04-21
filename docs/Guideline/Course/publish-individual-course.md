@@ -5,6 +5,7 @@ sidebar_label: How to Publish Individual Assignments in ACP
 sidebar_position: 4
 ---
 # How to Publish Individual Assignments in ACP
+This feature is for SA, ML, CA, Trainer
 
 1. Navigate to [ACP Brainfit Studio](https://acp.brainfitstudio.com/acp/).  
 2. Click **"Course"**.  

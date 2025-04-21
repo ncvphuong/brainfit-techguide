@@ -5,6 +5,7 @@ sidebar_label: Accessing Junior/Smart Moves/Brainfit Baby Sub Games Management o
 sidebar_position: 1
 ---
 # Accessing Junior/Smart Moves/Brainfit Baby Sub Games Management on ACP
+This feature is for SA
 
 ## Steps to Access  
 

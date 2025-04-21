@@ -5,6 +5,7 @@ sidebar_label: Resetting a Student's Game Log
 sidebar_position: 5
 ---
 ## Resetting a Student's Game Log
+This feature is for SA, ML
 
 1.  **Navigate** to[BrainFit ACP](https://acp.brainfitstudio.com/acp/).
 2.  Click **Students** in the navigation menu.

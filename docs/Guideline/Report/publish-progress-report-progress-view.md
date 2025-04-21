@@ -5,6 +5,7 @@ sidebar_label: How to Publish SmartWorkout/SmartMoves Progress Reports
 sidebar_position: 11
 ---
 # How to Publish SmartWorkout/SmartMoves Progress Reports
+This feature is for SA, ML, CA, Trainer
 
 1.  **Navigate** to [BrainFit ACP](https://acp.brainfitstudio.com/acp).
 2.  Click **Monthly Progress Reports**.

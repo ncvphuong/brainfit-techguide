@@ -5,6 +5,8 @@ sidebar_label: Suspend Student
 sidebar_position: 3
 ---
 # Suspend Student
+This feature is for SA, ML, CA, Trainer
+
 1. Navigate to [ACP Brainfit Studio](https://acp.brainfitstudio.com/acp/)
 2. Click **"Students"**
 

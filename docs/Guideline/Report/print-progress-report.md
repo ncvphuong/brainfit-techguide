@@ -5,6 +5,7 @@ sidebar_label: How to Access and Print Progress/Completion Reports
 sidebar_position: 2
 ---
 ## Accessing and Printing Progress/Completion Reports
+This feature is for SA, ML, CA, Trainer
 
 1.  **Navigate** to [BrainFit ACP](https://acp.brainfitstudio.com/acp).
 2.  Click **Monthly Progress Reports**.

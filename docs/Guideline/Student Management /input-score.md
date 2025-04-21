@@ -5,6 +5,7 @@ sidebar_label: Input Scores for Brainfit Game
 sidebar_position: 5
 ---
 # Input Scores for Brainfit Game
+This feature is for SA, ML, CA, Trainer
 
 1. Navigate to [ACP Brainfit Studio](https://acp.brainfitstudio.com/acp).  
 2. Click **"Systems"**.  

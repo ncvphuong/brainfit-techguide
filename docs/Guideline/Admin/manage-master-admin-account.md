@@ -5,6 +5,7 @@ sidebar_label: Management Master Admin Account
 sidebar_position: 1
 ---
 ## Creating a Master Admin Account
+This feature is for SA, ML
 
 1. **Navigate** to [BrainFit ACP](https://acp.brainfitstudio.com/acp).
 2. Click **Accounts** in the navigation menu.

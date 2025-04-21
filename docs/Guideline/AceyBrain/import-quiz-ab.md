@@ -5,6 +5,7 @@ sidebar_label: Import Quiz and Publishing Image on AceyBrain
 sidebar_position: 1
 ---
 # Importing Quiz and Publishing Image on BrainFit Studio Platform
+This feature is for SA
 
 ## Steps to Import a Quiz
 

@@ -5,6 +5,7 @@ sidebar_label: How to Publish Progress Reports in Student Detail View
 sidebar_position: 8
 ---
 # How to Publish Progress Reports in Student Detail View
+This feature is for SA, ML, CA, Trainer
 
 ## Steps to Search for a Student's Progress Report
 

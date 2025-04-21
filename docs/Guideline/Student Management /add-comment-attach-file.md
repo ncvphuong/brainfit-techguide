@@ -5,6 +5,7 @@ sidebar_label: Adding Comments for Student in BrainFit ACP
 sidebar_position: 14
 ---
 # Adding Comments for Student in BrainFit ACP
+This feature is for SA, ML, CA, Trainer
 
 ## Steps to Add a Comment  
 

@@ -5,6 +5,7 @@ sidebar_label: Merge Score CMv2
 sidebar_position: 2
 ---
 # Merge Score Guide
+This feature is for SA, ML
 
 1. **Login** with an admin account.  
 2. Click **"CogMaps V2"**.  

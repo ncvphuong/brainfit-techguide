@@ -5,7 +5,7 @@ sidebar_label: How To Generate Explanations
 sidebar_position: 2
 ---
 # How To Generate Explanations
-
+This feature is for SA
 ## Steps to Generate an Explanation
 
 1. Navigate to [ACP Portal](https://acp.brainfitstudio.com/acp/thinkworkout/).  

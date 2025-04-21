@@ -5,6 +5,7 @@ sidebar_label: How to Download and Upload Schedules of a Course
 sidebar_position: 10
 ---
 # How to Download and Upload Schedules of a Course
+This feature is for SA, ML, CA, Trainer
 
 ## Steps to Download the Schedule  
 

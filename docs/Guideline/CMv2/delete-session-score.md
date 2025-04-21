@@ -5,7 +5,7 @@ sidebar_label: Delete Session Score
 sidebar_position: 1
 ---
 # Delete Session Score
-
+This feature is for SA, ML
 ## Steps to Delete a Session Score  
 
 1. **Login** with an admin account.  
