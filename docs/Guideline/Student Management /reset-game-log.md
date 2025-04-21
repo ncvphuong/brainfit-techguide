@@ -4,7 +4,7 @@ title: Resetting a Student's Game Log
 sidebar_label: Resetting a Student's Game Log
 sidebar_position: 5
 ---
-## Resetting a Student's Game Log
+# Resetting a Student's Game Log
 This feature is for SA, ML
 
 1.  **Navigate** to[BrainFit ACP](https://acp.brainfitstudio.com/acp/).
