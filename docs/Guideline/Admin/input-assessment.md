@@ -4,8 +4,6 @@ title: Input Student Assessment Data
 sidebar_label: Input Student Assessment Data
 sidebar_position: 4
 ---
-
-## How to Input Student Assessment Data
 This feature is for SA, ML, CA
 
 1.  **Navigate** to the [ACP](https://acp.brainfitstudio.com/acp).
