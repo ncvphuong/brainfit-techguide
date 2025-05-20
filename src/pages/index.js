@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Explore the BrainFit Tech Guide, your comprehensive resource for navigating our platform. Find detailed guidelines, step-by-step instructions, and best practices to effectively utilize BrainFit's features and tools for optimal performance and understanding.">
       <HomepageHeader />
       <main>
       <HomepageFeatures />
