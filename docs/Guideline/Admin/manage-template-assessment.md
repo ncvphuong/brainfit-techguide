@@ -74,7 +74,7 @@ This feature is for SA
 
 ## Setting Up a Template
 
-1.  **Navigate** to the[ACP](https://acp.brainfitstudio.com/acp).
+1.  **Navigate** to the [ACP](https://acp.brainfitstudio.com/acp).
 2.  Click **Systems** in the navigation menu.
 
 ![Image](./img/manage-template-assessment-1.png)
@@ -173,7 +173,7 @@ This feature is for SA
 
 5.  Click **Save**.
 
-## Managing Classroom Templates
+<!-- ## Managing Classroom Templates
 
 1.  Click **Classroom Templates** in the navigation menu.
 2.  Click **All Templates**.
@@ -181,6 +181,6 @@ This feature is for SA
 ![Image](./img/manage-template-assessment-22.png)
 
 
-3.  The Classroom Assessment Templates will be displayed in a table format, showing complete information about the assigned templates for each classroom.
+3.  The Classroom Assessment Templates will be displayed in a table format, showing complete information about the assigned templates for each classroom. -->
 
 
