@@ -9,6 +9,7 @@ stages:
   - deploy
 
 cache:
+  key: ${CI_COMMIT_REF_SLUG}
   paths:
     - node_modules/
 
@@ -22,11 +23,12 @@ before_script:
 build:
   stage: build
   script:
-    - npm install
+    - npm ci         # ci nhanh và chuẩn hơn install trong CI/CD
     - npm run build
   artifacts:
     paths:
       - build/
+    expire_in: 1 hour
 
 deploy:
   stage: deploy
