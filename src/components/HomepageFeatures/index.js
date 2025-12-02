@@ -23,12 +23,22 @@ const FeatureList = [
       </>
     ),
     link: '/docs/category/guideline'
+  },
+  {
+    title: 'Processes',
+    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    description: (
+      <>
+        Standard processes and workflows for development and operations.
+      </>
+    ),
+    link: '/docs/category/processes'
   }
 ];
 
 function Feature({Svg, title, description, link}) {
   return (
-    <div className={clsx('col col--6')}>
+    <div className={clsx('col col--4')}>
     <Link to={link} className={styles.featureLink}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
