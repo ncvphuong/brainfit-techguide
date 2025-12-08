@@ -1,5 +1,5 @@
 ---
-id: clone-classs
+id: clone-class
 title: Clone a Class in BrainFit ACP
 sidebar_label: Clone a Class in BrainFit ACP
 sidebar_position: 1
