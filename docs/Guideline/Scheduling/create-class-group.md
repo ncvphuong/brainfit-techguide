@@ -210,9 +210,9 @@ Classes List > [Select Class] > Class Detail > Create Class Group
 
 After creating a Class Group:
 
-1. **[Create Session Templates](./create-session-template.md)** - Set up your recurring weekly schedule
-2. **[Generate Sessions](./generate-sessions.md)** - Create session instances for the term
-3. **[Assign Students to Sessions](./assign-students-to-sessions.md)** - Populate sessions with students
+1. **Create Session Templates** - Set up your recurring weekly schedule
+2. **Generate Sessions** - Create session instances for the term
+3. **Assign Students to Sessions** - Populate sessions with students
 
 ---
 
