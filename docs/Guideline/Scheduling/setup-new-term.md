@@ -1,4 +1,4 @@
-# How to Setup for New Term
+# How to Setup for New Term/Year
 
 This guide walks you through setting up BrainFit Scheduling for a new term, from preparing classes in ACP to creating class groups and managing student enrollments.
 
@@ -24,13 +24,15 @@ Before using BrainFit Scheduling, you must prepare your classes in the **BrainFi
 
 ### Important: Clone, Don't Reuse
 
-> ⚠️ **CRITICAL**: Always **clone** classes for a new term rather than reusing existing classes.
+📖 **[Learn how to clone classes](../Class%20Managemnet/clone-class.md)**
+
+> ⚠️ **CRITICAL**: Always **clone** classes for a new term rather than reusing existing classes. 
 
 **Why Clone?**
-- Preserves historical data from previous terms
-- Prevents confusion between current and past enrollments
-- Allows proper term-based reporting
-- Maintains data integrity for billing and attendance records
+- Preserves historical data from previous terms: later on when we report, we can query students list for 2025 - and their report in 2025 by class.
+- Prevents confusion between current and past enrollments 
+- Allows proper term-based reporting (future features)
+- Maintains data integrity for attendance records
 
 ### Requirements Before Setting Up Scheduling
 
@@ -67,12 +69,12 @@ The **majority of students should be enrolled** at the time you set up the class
    - Verify trainer availability and schedules
 
 6. **Verify Class Details**:
-   - Check class name, term dates, and center assignment
+   - Check class name, and center assignment
    - Confirm student count matches expectations
    - Verify all trainers are assigned
 
 > 📋 **Checklist**: Before moving to Step 2, ensure:
-> - [ ] New term classes are cloned (not reused)
+> - [ ] New year term classes are cloned (not reused)
 > - [ ] Majority of students are enrolled
 > - [ ] All trainers are assigned
 > - [ ] Term dates are correct
