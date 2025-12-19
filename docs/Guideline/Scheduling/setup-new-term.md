@@ -53,7 +53,7 @@ The **majority of students should be enrolled** at the time you set up the class
 2. **Navigate to Classes**
 3. **Clone previous term's classes** (do NOT reuse):
    - Select the class from the previous term
-   - Use the "Clone Class" function
+   - Use the ["Clone Class"](https://techguide.brainfitstudio.com/docs/Guideline/Class%20Managemnet/clone-class) function 
    - Update the term dates for the new term
    - Rename if needed (e.g., "SmartFit T1 2025" → "SmartFit T2 2025")
 

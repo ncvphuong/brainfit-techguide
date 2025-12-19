@@ -35,9 +35,11 @@ Make sure you have:
 
 1. Log in to BrainFit Scheduling
 2. From the sidebar menu, click **Classes**
+
+![Image](./img/schedule-1.png)
+
 3. You will see a list of all classes in your center(s)
 
-![Classes List Navigation]
 
 ---
 
@@ -45,6 +47,7 @@ Make sure you have:
 
 1. Find the class you want to create a group for
 2. Click on the class name to open the **Class Detail** page
+
 3. Review the class information:
    - Number of students enrolled
    - Trainers assigned to the class
@@ -55,6 +58,9 @@ Make sure you have:
 ### Step 3: Start Creating a Class Group
 
 1. Click the **Create Class Group** button (purple button at the top right)
+
+![Image](./img/schedule-3.png)
+
 2. You will be taken to the Class Group creation form
 
 ---
@@ -68,6 +74,8 @@ Make sure you have:
 | **Select Classes** | Choose one or more classes for this group | Yes |
 | **Description** | Optional notes about this group | No |
 | **Color** | Pick a color for calendar display | Yes |
+
+![Image](./img/schedule-4.png)
 
 #### Group Types Explained:
 
@@ -83,6 +91,8 @@ If you select **multiple classes**, this creates a "combo" class group:
 - Useful when students attend multiple related programs together
 - A combo icon will appear next to the group name in lists
 
+![Image](./img/schedule-5.png)
+
 ---
 
 ### Step 5: Set Term Period
@@ -91,6 +101,8 @@ If you select **multiple classes**, this creates a "combo" class group:
 |-------|-------------|---------|
 | **Term Start Date** | When the class group sessions begin | Today |
 | **Term End Date** | When the class group sessions end | 3 months from today |
+
+![Image](./img/schedule-7.png)
 
 **Tips:**
 - Align dates with your center's term schedule
@@ -106,6 +118,8 @@ If you select **multiple classes**, this creates a "combo" class group:
 | **Maximum Participants** | Regular max students per session | 6 |
 | **Expanded Capacity** | Max capacity when allowing session changes | 8 |
 | **Max Change Requests** | Maximum session changes per student per term | 5 |
+
+![Image](./img/schedule-6.png)
 
 **How Capacity Works:**
 
@@ -131,6 +145,8 @@ changes during the term period
 2. Check the box next to each trainer you want to assign to this group
 3. You can select multiple trainers
 
+![Image](./img/schedule-8.png)
+
 **Note:** Only trainers already assigned to the selected class(es) in BrainFit HQ will appear here.
 
 ---
@@ -139,6 +155,9 @@ changes during the term period
 
 1. Review the list of available students from the selected class(es)
 2. Use **Select All** to quickly select all students
+
+![Image](./img/schedule-9.png)
+
 3. Use **Clear All** to deselect all students
 4. Check individual students as needed
 
@@ -159,6 +178,8 @@ The counter at the bottom shows how many students you've selected.
 
 3. Click **Create Class Group** (purple button at bottom)
 
+![Image](./img/schedule-10.png)
+
 ---
 
 ### Step 10: After Creation
@@ -166,10 +187,25 @@ The counter at the bottom shows how many students you've selected.
 After successfully creating the class group, you will be redirected to the **Class Group Detail** page where you can:
 
 1. **Create Session Templates** - Set up recurring weekly sessions
+
+![Image](./img/schedule-17.png)
+
 2. **View/Edit Members** - Add or remove students and trainers
 3. **Generate Sessions** - Create actual session instances from templates
+
+![Image](./img/schedule-20.png)
+
 4. **View Calendar** - See all scheduled sessions in calendar format
+
+![Image](./img/schedule-21.png)
+
 5. **Manage Onboarding** - Generate onboarding tasks for new students
+
+![Image](./img/schedule-24.png)
+
+
+![Image](./img/schedule-25.png)
+
 
 ---
 

@@ -19,8 +19,13 @@ This guide covers how to manage an existing Class Group, including creating sess
 ## Accessing Class Group Detail
 
 1. Navigate to **Class Groups** from the sidebar
+
+![Image](./img/schedule-26.png)
+
 2. Find your class group in the list
 3. Click the **eye icon** or the group name to open the detail view
+
+![Image](./img/schedule-27.png)
 
 ---
 
@@ -88,6 +93,9 @@ Session templates define your recurring weekly schedule. Each template specifies
 
 1. Find the template in the Session Templates section
 2. Click the **pencil icon**
+
+![Image](./img/schedule-28.png)
+
 3. Modify the fields:
    - Name
    - Day of week
@@ -100,6 +108,9 @@ Session templates define your recurring weekly schedule. Each template specifies
 ### Deleting a Session Template
 
 1. Click the **trash icon** next to the template
+
+![Image](./img/schedule-29.png)
+
 2. Confirm the deletion
 
 > **Warning:** Deleting a template will also delete ALL sessions generated from it!
@@ -113,6 +124,9 @@ After creating templates, you need to generate actual session instances for your
 ### Step-by-Step: Generate Sessions
 
 1. Click **Generate Sessions** in Quick Actions (or the link in empty sessions area)
+
+![Image](./img/schedule-20.png)
+
 2. In the modal, configure:
 
    | Option | Description |
@@ -124,6 +138,8 @@ After creating templates, you need to generate actual session instances for your
    | **Auto-assign students** | Automatically add all group students to sessions |
 
 3. Click **Generate Sessions**
+
+![Image](./img/schedule-33.png)
 
 ### Generation Options Explained
 
@@ -146,12 +162,16 @@ After creating templates, you need to generate actual session instances for your
 For one-off sessions outside the template schedule:
 
 1. Click **Create Session** button in the Sessions section
+
+![Image](./img/schedule-34.png)
+
 2. Fill in:
    - Date and start time
    - Duration (in minutes)
    - Max participants
    - Session title (optional)
    - Select students to assign
+
 3. Click **Create Session**
 
 ### Session Actions
@@ -168,7 +188,12 @@ Each session in the list has action buttons:
 ### Deleting All Sessions
 
 1. Click **Delete All** button in Sessions header
+
+![Image](./img/schedule-30.png)
+
 2. Confirm the action
+
+![Image](./img/schedule-31.png)
 
 > **Warning:** This permanently deletes ALL sessions and their attendance records!
 
@@ -179,25 +204,43 @@ Each session in the list has action buttons:
 ### Assigning Teachers
 
 1. Click **Assign Teachers** button
+
+![Image](./img/schedule-36.png)
+
 2. Check the teachers you want to add
+
+![Image](./img/schedule-37.png)
+
 3. Click **Assign Selected Teachers**
 
 ### Removing Teachers
 
 1. Find the teacher in the Assigned Teachers list
 2. Click the **X** button
+
+![Image](./img/schedule-39.png)
+
 3. Confirm removal
 
 ### Assigning Students
 
 1. Click **Assign Students** button
+
+![Image](./img/schedule-42.png)
+
 2. Check the students you want to add (shows students from associated classes)
+
+![Image](./img/schedule-43.png)
+
 3. Click **Assign Selected Students**
 
 ### Removing Students
 
 1. Find the student in the Students list
 2. Click the **X** button
+
+![Image](./img/schedule-44.png)
+
 3. Confirm removal
 
 ---
@@ -209,6 +252,9 @@ Each session in the list has action buttons:
 If you added new students to the group and want them enrolled in existing future sessions:
 
 1. Click **Sync Student Enrollments** in Quick Actions
+
+![Image](./img/schedule-45.png)
+
 2. Confirm the action
 3. All group students will be added to all future sessions
 
@@ -224,6 +270,9 @@ Control whether sessions are visible to parents in the Parent Booking Center (PB
 | Unpublished | Green **Publish** | Sessions hidden from PBC |
 
 Use unpublish while setting up a new term, then publish when ready.
+
+![Image](./img/schedule-47.png)
+
 
 ---
 

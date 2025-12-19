@@ -36,12 +36,18 @@ There are **two levels** of student assignment in BrainFit Scheduling:
 ### Step-by-Step
 
 1. Navigate to the **Class Group Detail** page
+
+![Image](./img/schedule-48.png)
+
 2. Find the **Students** section in the right sidebar
 3. Click the **Assign Students** button (blue button)
 
 ### In the Assign Students Modal
 
 1. You'll see a list of available students from the associated class(es)
+
+![Image](./img/schedule-42.png)
+
 2. Each student shows:
    - Name
    - Email and username
@@ -49,6 +55,9 @@ There are **two levels** of student assignment in BrainFit Scheduling:
    - Source class (shown as a purple badge)
 
 3. **Check the box** next to each student you want to add
+
+![Image](./img/schedule-43.png)
+
 4. Click **Assign Selected Students**
 
 ### After Adding Students
@@ -58,8 +67,14 @@ The students are now **group members** but are NOT yet in any sessions. To add t
 **Option A: Sync to all future sessions**
 - Use the **Sync Student Enrollments** button (see below)
 
+![Image](./img/schedule-45.png)
+
+
 **Option B: Add to specific sessions only**
 - Go to each session and use "Add/Remove Students" feature
+
+![Image](./img/schedule-56.png)
+
 
 ---
 
@@ -132,6 +147,9 @@ For more granular control, you can add/remove students from specific sessions.
 ### Accessing Session Student Management
 
 1. In the **Sessions** section, find the session
+
+![Image](./img/schedule-56.png)
+
 2. Click the **Add/Remove Students** icon (➕ green user-plus icon)
 
 ### The Add/Remove Students Modal
@@ -143,6 +161,8 @@ The modal shows two columns:
 | **Available Students** | **Assigned Students** |
 | Group members NOT in this session | Students currently in this session |
 | Click "Add" to assign | Click "Remove" to unassign |
+
+![Image](./img/schedule-57.png)
 
 ### Adding a Student to a Session
 
