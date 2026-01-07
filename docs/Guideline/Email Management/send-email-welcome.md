@@ -2,7 +2,7 @@
 id: send-email-welcome
 title: Send Welcome Email to Parent
 sidebar_label: Send Welcome Email to Parent
-sidebar_position: 5
+sidebar_position: 1
 ---
 
 # Send Welcome Email to Parent
@@ -17,7 +17,7 @@ This guide explains how to send a welcome email to parents from BrainFit HQ (ACP
 |--------|---------------|
 | Send welcome email | Super Admin, Master Licensee, Center Admin |
 
-> **Note:** This feature is available for Super Admin (SA), Master Licensee (ML), and Center Admin (CA) roles.
+> **Note:** This feature is available for Super Admin (SA), Master Licensee (ML), Master Admin (MA) and Center Admin (CA) roles.
 
 ---
 
@@ -95,8 +95,8 @@ The welcome email feature allows you to:
 ![Image](./img/send-email-welcome-9.png)
 
 **What to do:**
-- You must **update the parent's password** before sending the welcome email
-- This ensures the parent receives valid login credentials
+- You must **update the parent&student's password** before sending the welcome email
+- This ensures the parent receives valid login credentials and include student
 - Update the password in the parent's account settings first, then proceed with sending the email
 
 ---
