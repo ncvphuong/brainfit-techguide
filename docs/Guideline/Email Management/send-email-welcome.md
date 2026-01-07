@@ -13,7 +13,7 @@ This guide explains how to send a welcome email to parents from BrainFit HQ (ACP
 
 ## Required Roles
 
-This feature is available for Super Admin (SA), Master Licensee (ML), Master Admin (MA) and Center Admin (CA) roles.
+This feature is available for Super Admin (SA), Master Licensee (ML), Master Admin (MA), Center Admin (CA) and Trainer roles.
 
 ---
 
