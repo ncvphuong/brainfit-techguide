@@ -17,7 +17,7 @@ This guideline provides step-by-step instructions to:
 ## 2. Access System
 
 1. Navigate to the system:
-   https://acp.powerdigital.sg/acp/systems
+   https://acp.brainfitstudio.com/acp/systems
 
 2. Go to:
    - **AceyBrain**
