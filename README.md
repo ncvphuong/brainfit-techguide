@@ -1,41 +1,31 @@
-# Website
+# BrainFit TechGuide
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Internal documentation site for the BrainFit platform — staff guides, admin how-tos, and system references.
 
-### Installation
+- **Live:** https://techguide.brainfitstudio.com
+- **Stack:** Docusaurus 3.7.0 (static site)
+- **Migrated from:** https://git.primetechnology.vn/prime-nodejs/tech-guide-brainfit (GitLab)
 
-```
-$ yarn
-```
+---
 
-### Local Development
+## Local Dev
 
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
+```bash
+npm install   # first time only
+npm start     # http://localhost:3000, hot reload
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Deploy
 
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
+```bash
+npm run build
+rsync -avz --delete -e "ssh -i ~/.ssh/ip14-alex" build/ ubuntu@45.77.244.219:/home/ubuntu/brainfit-techguide/
 ```
 
-Not using SSH:
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for full setup details.
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
+## Adding Docs
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- Write `.md` files under `docs/` — folder structure = sidebar
+- Images go in an `img/` subfolder next to the `.md` file, referenced as `![alt](./img/filename.png)`
+- Commit + push to `master`, then redeploy with the two commands above
