@@ -2,7 +2,8 @@
 id: manage-template-assessment
 title: Management Template Assessment
 sidebar_label: Management Template Assessment
-sidebar_position: 3
+sidebar_position: 9.5
+slug: /Guideline/Admin/manage-template-assessment
 ---
 
 This feature is for SA

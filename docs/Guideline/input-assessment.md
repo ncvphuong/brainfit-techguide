@@ -2,7 +2,8 @@
 id: input-assessment
 title: Input Student Assessment Data
 sidebar_label: Input Student Assessment Data
-sidebar_position: 4
+sidebar_position: 9.6
+slug: /Guideline/Admin/input-assessment
 ---
 This feature is for SA, ML, CA
 
