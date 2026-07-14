@@ -2,7 +2,7 @@
 id: manage-template-assessment
 title: Management Template Assessment
 sidebar_label: Management Template Assessment
-sidebar_position: 9.5
+sidebar_position: 1
 slug: /Guideline/Admin/manage-template-assessment
 ---
 
