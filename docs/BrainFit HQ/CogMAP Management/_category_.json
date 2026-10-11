@@ -1,0 +1,8 @@
+{
+  "label": "CogMAP Management",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Set up CogMAP V2 for a class or a student and read the results."
+  }
+}

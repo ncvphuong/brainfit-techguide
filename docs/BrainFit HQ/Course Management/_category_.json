@@ -1,0 +1,8 @@
+{
+  "label": "Course Management",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Create and edit courses, progression, clone and assign."
+  }
+}
