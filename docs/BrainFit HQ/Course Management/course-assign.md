@@ -5,11 +5,12 @@ sidebar_label: Assign a Course
 sidebar_position: 5
 ---
 # Assign a Course
-This feature is for SA, ML, MA, CA
+This feature is for SA, ML, MA
 
-:::info Coming soon
-This guide is being written. Screenshots will come from the practice training centre.
-:::
+1. In the course list, click **Assign Trainer**, **Assign Parent** or **Assign Student** on the course's row.
 
-**What it will cover:**
-- Assign a course to a centre and its classes, for students and parents.
+![Image](./img/course-assign-1.png)
+
+2. Tick the centre or the classes that should get the course (the list shows the centres of the course's master licensee). Each class has **setup publish date** to release the topics on a schedule. The buttons at the top right switch to assigning for trainers or parents.
+
+![Image](./img/course-assign-2.png)
