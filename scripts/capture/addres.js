@@ -1,0 +1,17 @@
+const { open, go, mark, clear, shot } = require('./lib');
+const { execSync } = require('child_process');
+const OUT = process.argv[2]; const sleep = ms => new Promise(r => setTimeout(r, ms));
+const cleanup = () => execSync(`ssh -i ~/.ssh/ip14-alex deploy@45.63.26.194 'export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"; cd /home/deploy/brainfitstudio && RAILS_ENV=production DISABLE_SPRING=1 bundle exec rails runner /home/deploy/m338.rb 2>&1 | grep -v "warning:\\\\|Bundler"'`).toString().trim();
+(async () => { const { browser, page } = await open('author', { width: 1600, height: 900 });
+  await go(page, '/acp/courses/338/edit');
+  await page.evaluate(() => { const a = document.querySelector('a[href*="/acp/media/topic/"]'); a.setAttribute('data-tg-plus', '1'); a.scrollIntoView({ block: 'center' }); });
+  await mark(page, '[data-tg-plus]', { pad: 5 }); await shot(page, `${OUT}/course-edit-3.png`); await clear(page);
+  const href = await page.evaluate(() => document.querySelector('[data-tg-plus]').getAttribute('href'));
+  await go(page, href);
+  await page.evaluate(() => { const tr = [...document.querySelectorAll('li.dd-item')].find(li => li.textContent.includes('media title')); tr?.scrollIntoView({ block: 'center' }); tr?.querySelector('a.update-form')?.click(); });
+  await sleep(1500);
+  await page.evaluate(() => { const m = [...document.querySelectorAll('.modal')].find(m => getComputedStyle(m).display === 'block'); m?.querySelectorAll('select[name*=context], input[name*="[title]"], input[type=file]').forEach(e => (e.closest('.form-group') || e).setAttribute('data-tg-f', '1')); m?.querySelectorAll('button[type=submit]').forEach(b => b.setAttribute('data-tg-sv', '1')); });
+  await mark(page, '[data-tg-f]', { pad: 3 }); await mark(page, '[data-tg-sv]', { pad: 4 });
+  await shot(page, `${OUT}/course-edit-4.png`);
+  await browser.close(); console.log(cleanup());
+})().catch(e => { console.error(e); console.log(cleanup()); process.exit(1); });
