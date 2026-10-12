@@ -1,0 +1,45 @@
+// Teacher Tools guide screenshots: production, SG BF Training Centre 2027 only, read-only (never submits).
+const { openTT, loginTT, useTrainingCentre, BASE } = require('./ttlib'); const { shot, mark, markText, clear } = require('./lib');
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const OUT = process.argv[2]; const S = '/dashboard/session/24301/group/1195/?class_name=Scholar%20T1%3A%20SmartFit%20Lower%20Pri';
+const SAFE_POST = /select-center|smartmoves\/api\/config|junior\/api\/config|google-analytics|login\/token/;
+(async () => { const { browser, page } = await openTT({ width: 430, height: 932, mobile: true });
+  page.on('request', r => { if (r.method() !== 'GET' && !SAFE_POST.test(r.url())) { console.error('UNEXPECTED WRITE', r.method(), r.url()); process.exit(2); } });
+  const o = n => `${OUT}/${n}.png`;
+  const guard = async () => { const t = await page.evaluate(() => document.body.innerText); if (/Novena|Katong|School House|Little Green|Bukit|Tampines/.test(t)) throw new Error('other centre visible'); };
+  await page.goto(BASE + '/logout/', { waitUntil: 'networkidle2' }).catch(() => {}); await page.goto(BASE + '/login/', { waitUntil: 'networkidle2' });
+  await shot(page, o('tt-login'));
+  await loginTT(page); await useTrainingCentre(page); await guard();
+  await markText(page, 'button', 'SG BF Training Centre 2027'); await shot(page, o('tt-centre')); await clear(page);
+  await page.evaluate(() => { const d = document.getElementById('sessions-date-picker'); d.value = '2027-01-04'; d.dispatchEvent(new Event('change', { bubbles: true })); }); await sleep(4000); await guard();
+  await page.evaluate(() => { document.getElementById('sessions-date-picker').scrollIntoView({ block: 'start' }); scrollBy(0, -140); });
+  await mark(page, '#sessions-date-picker'); await shot(page, o('tt-sessions-date')); await clear(page);
+  await mark(page, 'a[href*="/session/24301/"]'); await shot(page, o('tt-sessions-card')); await clear(page);
+  const go = async t => { await page.goto(BASE + S + '&tab=' + t, { waitUntil: 'networkidle2', timeout: 90000 }); await sleep(1500); await guard(); };
+  const tapStudent = async () => { await page.evaluate(() => [...document.querySelectorAll('[onclick]')].filter(e => e.offsetParent && e.textContent.includes('Sarah Ng')).sort((a, b) => a.textContent.length - b.textContent.length)[0].click()); await sleep(2500); };
+  await go('pm'); await mark(page, 'a[href*="tab="]'); await shot(page, o('tt-session-tabs')); await clear(page);
+  await tapStudent(); await shot(page, o('tt-points-student'));
+  await page.evaluate(() => [...document.querySelectorAll('button')].find(b => b.offsetParent && /Add Points/.test(b.textContent)).click()); await sleep(1500);
+  await page.setViewport({ width: 430, height: 1300, deviceScaleFactor: 2, isMobile: true, hasTouch: true }); await sleep(800);
+  await shot(page, o('tt-points-add')); await page.setViewport({ width: 430, height: 932, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+  for (const [t, card, fn] of [['sm', 'subgame-card', 'openSmModal'], ['jr', 'jr-subgame-card', 'openJrModal']]) {
+    await go(t);
+    const game = await page.evaluate((card, fn) => { const b = document.querySelector(`.${card} button[onclick^="${fn}"]`); return b && b.closest('.' + card).querySelector('p').textContent.trim(); }, card, fn);
+    console.log(t, 'game with Input:', game);
+    if (!game) { await page.evaluate(t => document.getElementById(t + '-game-search-input').click(), t); await sleep(1000);
+      await mark(page, `#${t}-game-search-input`); await shot(page, o(`tt-${t}-pick`)); await clear(page);
+      await page.evaluate(() => document.body.click()); await sleep(800); await shot(page, o(`tt-${t}-list`)); continue; } await page.evaluate(t => document.getElementById(t + '-game-search-input').click(), t); await sleep(1000);
+    await mark(page, `#${t}-game-search-input`); await shot(page, o(`tt-${t}-pick`)); await clear(page);
+    await page.evaluate((t, g) => [...document.querySelectorAll(`#${t}-game-dropdown *`)].find(e => e.children.length === 0 && e.textContent.trim() === g).click(), t, game); await sleep(4000);
+    await page.evaluate(() => scrollTo(0, 0));
+    await mark(page, `.${card} button[onclick^="${fn}"]`); await shot(page, o(`tt-${t}-list`)); await clear(page);
+    await page.evaluate((card, fn) => [...document.querySelectorAll(`.${card} button[onclick^="${fn}"]`)].find(b => b.offsetParent).click(), card, fn); await sleep(3000);
+    await shot(page, o(`tt-${t}-input`));
+  }
+  await go('att'); await markText(page, 'div', 'QUICK ACTIONS'); await shot(page, o('tt-attendance')); await clear(page);
+  await go('at'); await tapStudent(); await shot(page, o('tt-assessment'));
+  await go('nt'); await tapStudent(); await shot(page, o('tt-notes'));
+  await go('p360'); await tapStudent();
+  await page.evaluate(() => document.querySelectorAll('.font-mono').forEach(e => { if (/Password/i.test(e.previousElementSibling?.textContent || '')) e.textContent = '••••••'; }));
+  await shot(page, o('tt-student360'));
+  await browser.close(); })().catch(e => { console.error(String(e)); process.exit(1); });
