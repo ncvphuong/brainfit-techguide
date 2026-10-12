@@ -7,6 +7,12 @@ sidebar_position: 4
 # Assign Games to a Class
 This feature is for SA, ML, MA, CA
 
+**Watch (about 50 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/class-games.mp4" type="video/mp4" />
+</video>
+
 Games assigned to a class go to every student in that class.
 
 1. In **Class**, click the **gamepad** icon on the class's row (or the gamepad on the class page).

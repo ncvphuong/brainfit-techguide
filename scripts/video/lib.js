@@ -2,6 +2,9 @@
 // Narration (ElevenLabs) -> one clip per step; Puppeteer drives Chrome in real time, holding each step for as long as its
 // clip lasts; Chrome's screencast is mixed with the clips by ffmpeg. See doc/hq/training_center/plan_training_videos_2026-10-12.html
 // in brainfit-ruby. The ElevenLabs key is read from the user's motion_graphic/.env at run time and never printed or stored here.
+// Temp files (Chrome profiles etc.) go on the Transcend SSD, never the internal disk.
+process.env.TMPDIR = process.env.TMPDIR_VIDEO || '/Volumes/Transcend/development/tmp/bf-second-dev/tmp';
+require('fs').mkdirSync(process.env.TMPDIR, { recursive: true });
 const fs = require('fs'), path = require('path'), crypto = require('crypto'), { execFileSync } = require('child_process');
 const { open } = require('../capture/lib');
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -43,8 +46,9 @@ async function tts(text) {
 
 // Overlays that survive page navigations: a visible cursor, click ripple, caption bar.
 const OVERLAY = () => {
-  const css = `body{padding-bottom:120px!important}#__cur{position:fixed;z-index:2147483647;left:0;top:0;width:22px;height:22px;pointer-events:none;transform:translate(-3px,-2px);filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))}
+  const css = `body{padding-bottom:120px!important}#__cur{animation:__tick .25s steps(2,end) infinite;position:fixed;z-index:2147483647;left:0;top:0;width:22px;height:22px;pointer-events:none;transform:translate(-3px,-2px);filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))}
   .__rip{position:fixed;z-index:2147483646;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;border:3px solid #2563eb;pointer-events:none;animation:__rip .55s ease-out forwards}
+  @keyframes __tick{0%{opacity:1}100%{opacity:.985}}
   @keyframes __rip{to{transform:scale(3.2);opacity:0}}
   #__cap{position:fixed;z-index:2147483645;left:50%;bottom:22px;transform:translateX(-50%);max-width:78%;padding:10px 20px;border-radius:12px;background:rgba(15,23,42,.88);color:#fff;font:600 18px/1.35 -apple-system,Segoe UI,Helvetica,Arial,sans-serif;text-align:center;pointer-events:none;box-shadow:0 6px 22px rgba(0,0,0,.35)}
   .__hl{position:absolute;z-index:99999;pointer-events:none;border:3px solid #e11d48;border-radius:8px;box-shadow:0 0 0 4px rgba(225,29,72,.2);animation:__pulse 1.1s ease-in-out infinite}
@@ -65,7 +69,7 @@ const OVERLAY = () => {
 function makeCtx(page) {
   const ctx = {
     page, sleep,
-    async go(p) { await page.goto('https://brainfit.dev3.powerdigital.sg' + p, { waitUntil: 'networkidle2', timeout: 60000 }); await page.addStyleTag({ content: '*{animation-duration:0s!important;transition:none!important}.__rip,.__hl,#__cap{animation:revert!important}' }).catch(() => {}); await sleep(500); },
+    async go(p) { await page.goto('https://brainfit.dev3.powerdigital.sg' + p, { waitUntil: 'networkidle2', timeout: 60000 }); await page.addStyleTag({ content: '*{animation-duration:0s!important;transition:none!important}.__rip,.__hl,#__cap,#__cur{animation:revert!important}' }).catch(() => {}); await sleep(500); },
     async caption(text) { await page.evaluate(t => { sessionStorage.__cap = t; let k = document.getElementById('__cap'); if (!k) { k = document.createElement('div'); k.id = '__cap'; document.body.appendChild(k); } k.textContent = t; }, text); },
     // Tag the element found by a function body (returns an Element) so later calls can reach it with a selector.
     async tag(fnBody, name = 'a') { const ok = await page.evaluate((b, n) => { const el = new Function(b)(); if (!el) return false; document.querySelectorAll(`[data-v-${n}]`).forEach(e => e.removeAttribute(`data-v-${n}`)); el.setAttribute(`data-v-${n}`, '1'); return true; }, fnBody, name); if (!ok) throw new Error('element not found: ' + fnBody.slice(0, 90)); return `[data-v-${name}]`; },
@@ -74,7 +78,7 @@ function makeCtx(page) {
     async click(sel, opts = {}) { await ctx.glide(sel); await sleep(250); if (opts.wait) await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 60000 }), page.mouse.click(...(await ctx.pos()))]); else await page.mouse.click(...(await ctx.pos())); if (opts.wait) await sleep(600); },
     async pos() { return page.evaluate(() => (sessionStorage.__cp || '0,0').split(',').map(Number)); },
     async hl(sel, pad = 5) { await page.evaluate((s, p) => { document.querySelectorAll(s).forEach(el => { const r = el.getBoundingClientRect(); if (!r.width) return; const b = document.createElement('div'); b.className = '__hl'; Object.assign(b.style, { left: r.left + scrollX - p + 'px', top: r.top + scrollY - p + 'px', width: r.width + p * 2 + 'px', height: r.height + p * 2 + 'px' }); document.body.appendChild(b); }); }, sel, pad); },
-    async unhl() { await page.evaluate(() => document.querySelectorAll('.__hl').forEach(e => e.remove())); },
+    async unhl() { await page.evaluate(() => document.querySelectorAll('.__hl').forEach(e => e.remove())).catch(() => {}); },
     async type(sel, text) { await ctx.click(sel); await page.keyboard.type(text, { delay: 70 }); },
     async scrollTo(sel, offset = 90) { await page.evaluate((s, o) => { const el = document.querySelector(s); window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - o, behavior: 'smooth' }); }, sel, offset); await sleep(900); },
   };
@@ -94,32 +98,35 @@ async function makeVideo({ name, who = 'ma', beats, before, after, startPath = '
   // Frames come from CDP's screencast with their own timestamps (a frame is only sent when the page changes), so the
   // video timeline is exact even when a page load stalls; the narration is placed on the same clock.
   const frameDir = path.join(outDir, name + '_frames'); fs.rmSync(frameDir, { recursive: true, force: true }); fs.mkdirSync(frameDir, { recursive: true });
-  const frames = []; const cdp = await page.createCDPSession();
-  cdp.on('Page.screencastFrame', async ({ data, metadata, sessionId }) => { const f = path.join(frameDir, String(frames.length).padStart(6, '0') + '.jpg'); fs.writeFileSync(f, Buffer.from(data, 'base64')); frames.push({ t: metadata.timestamp, f }); await cdp.send('Page.screencastFrameAck', { sessionId }).catch(() => {}); });
-  await cdp.send('Page.startScreencast', { format: 'jpeg', quality: 92, maxWidth: 1280, maxHeight: 720, everyNthFrame: 1 });
+  // Frames are taken by polling page.screenshot (CDP's screencast stalled behind some overlays and stopped sending frames).
+  const frames = []; let recording = true;
+  const cdp = { send: async () => { recording = false; } };
+  const poller = (async () => { while (recording) { const t = Date.now() / 1000; try { const f = path.join(frameDir, String(frames.length).padStart(6, '0') + '.jpg'); await page.screenshot({ path: f, type: 'jpeg', quality: 85 }); frames.push({ t, f }); } catch (e) { /* navigation in flight: skip */ await sleep(60); } } })();
   await ctx.caption(' ').catch(() => {}); await sleep(900);
   const starts = [];
   for (let i = 0; i < beats.length; i++) {
     const s = Date.now(); starts.push(s / 1000);
     await ctx.caption(beats[i].say).catch(() => {});
-    try { await beats[i].run(ctx); } catch (e) { console.error(`[${name}] beat ${i + 1} failed: ${e.message}`); await cdp.send('Page.stopScreencast').catch(() => {}); await browser.close(); throw e; }
+    try { await beats[i].run(ctx); } catch (e) { console.error(`[${name}] beat ${i + 1} failed: ${e.message}`); recording = false; await poller; await browser.close(); if (after) await after().catch(() => {}); throw e; }
     const left = clips[i].dur * 1000 + 700 - (Date.now() - s); if (left > 0) await sleep(left); else console.log(`  beat ${i + 1} actions overran narration by ${(-left / 1000).toFixed(1)}s`);
     await ctx.unhl().catch(() => {});
   }
-  await sleep(900); const endT = Date.now() / 1000; await cdp.send('Page.stopScreencast').catch(() => {}); await browser.close();
+  await sleep(900); const endT = Date.now() / 1000; recording = false; await poller; await browser.close();
   if (after) await after();
   if (!frames.length) throw new Error('no screencast frames captured');
   const T0 = frames[0].t;
+  console.log(`  frames: ${frames.length}, first->last ${(frames[frames.length - 1].t - T0).toFixed(1)}s, run end ${(endT - T0).toFixed(1)}s; longest gap ${Math.max(...frames.map((f, i) => i ? f.t - frames[i - 1].t : 0)).toFixed(1)}s`);
   const list = frames.map((fr, i) => `file '${fr.f}'\nduration ${Math.max(0.001, ((frames[i + 1] ? frames[i + 1].t : Math.max(endT, fr.t + 0.1)) - fr.t)).toFixed(4)}`).join('\n') + `\nfile '${frames[frames.length - 1].f}'\n`;
   const listFile = path.join(outDir, name + '_frames.txt'); fs.writeFileSync(listFile, list);
   const webm = path.join(outDir, name + '_silent.mp4');
   execFileSync('ffmpeg', ['-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', listFile, '-vf', 'fps=30,scale=1280:720', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '20', webm]);
+  fs.rmSync(frameDir, { recursive: true, force: true }); fs.rmSync(listFile, { force: true });
   const t0 = T0; // clock for the audio: seconds since the first frame
   const mp4 = path.join(outDir, name + '.mp4');
   starts.forEach((v, i) => { starts[i] = Math.max(0, v - t0); });
   const args = ['-y', '-v', 'error', '-i', webm]; clips.forEach(c => args.push('-i', c.file));
-  const fc = clips.map((c, i) => `[${i + 1}:a]adelay=${Math.round(starts[i] * 1000)}|${Math.round(starts[i] * 1000)}[a${i}]`).join(';') + ';' + clips.map((_, i) => `[a${i}]`).join('') + `amix=inputs=${clips.length}:normalize=0[aout]`;
-  args.push('-filter_complex', fc, '-map', '0:v', '-map', '[aout]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', '-shortest', mp4);
+  const fc = clips.map((c, i) => `[${i + 1}:a]adelay=${Math.round(starts[i] * 1000)}|${Math.round(starts[i] * 1000)}[a${i}]`).join(';') + ';' + clips.map((_, i) => `[a${i}]`).join('') + `amix=inputs=${clips.length}:normalize=0,apad[aout]`;
+  args.push('-filter_complex', fc, '-map', '0:v', '-map', '[aout]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', '-t', String(Math.max(0.5, endT - T0).toFixed(2)), mp4);
   execFileSync('ffmpeg', args);
   const vd = parseFloat(execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', mp4]).toString());
   console.log(`[${name}] ${mp4}  ${vd.toFixed(1)}s  (narration ${clips.reduce((a, c) => a + c.dur, 0).toFixed(1)}s)`);

@@ -7,6 +7,12 @@ sidebar_position: 3
 # Enrol Students into a Class
 This feature is for SA, ML, MA, CA, Trainer
 
+**Watch (about 30 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/class-enrol.mp4" type="video/mp4" />
+</video>
+
 1. On the class page, click **Enroll students**.
 
 ![Image](./img/class-enrol-1.png)

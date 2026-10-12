@@ -7,6 +7,12 @@ sidebar_position: 2
 # Add or Remove Trainers and Assistant Coaches
 This feature is for SA, ML, MA, CA, Trainer
 
+**Watch (about 40 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/class-staff.mp4" type="video/mp4" />
+</video>
+
 1. On the class page, click **+** next to **Trainers** (or **Assistant Coaches**). The **×** on a name removes that person from the class.
 
 ![Image](./img/class-staff-1.png)

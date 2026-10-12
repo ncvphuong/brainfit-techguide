@@ -7,6 +7,12 @@ sidebar_position: 1
 # View a Class
 This feature is for SA, ML, MA, CA, Trainer, Assistant Coach
 
+**Watch (about 1 min):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/class-view.mp4" type="video/mp4" />
+</video>
+
 1. Open **Class** in the top menu. Click the class name, or the **eye** icon in the Action column.
 
 ![Image](./img/class-view-1.png)
