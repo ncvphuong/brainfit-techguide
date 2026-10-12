@@ -7,6 +7,7 @@ process.env.TMPDIR = process.env.TMPDIR_VIDEO || '/Volumes/Transcend/development
 require('fs').mkdirSync(process.env.TMPDIR, { recursive: true });
 const fs = require('fs'), path = require('path'), crypto = require('crypto'), { execFileSync } = require('child_process');
 const { open } = require('../capture/lib');
+const { openSch } = require('../capture/schlib');
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const ENV_FILE = process.env.ELEVEN_ENV_FILE || '/Volumes/Transcend/development/random_stuff/motion_graphic/.env';
 const VOICE = process.env.VOICE_NAME || 'Alice';
@@ -66,10 +67,10 @@ const OVERLAY = () => {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 };
 
-function makeCtx(page) {
+function makeCtx(page, base = 'https://brainfit.dev3.powerdigital.sg') {
   const ctx = {
     page, sleep,
-    async go(p) { await page.goto('https://brainfit.dev3.powerdigital.sg' + p, { waitUntil: 'networkidle2', timeout: 60000 }); await page.addStyleTag({ content: '*{animation-duration:0s!important;transition:none!important}.__rip,.__hl,#__cap,#__cur{animation:revert!important}' }).catch(() => {}); await sleep(500); },
+    async go(p) { await page.goto(base + p, { waitUntil: 'networkidle2', timeout: 60000 }); await page.addStyleTag({ content: '*{animation-duration:0s!important;transition:none!important}.__rip,.__hl,#__cap,#__cur{animation:revert!important}' }).catch(() => {}); await sleep(500); },
     async caption(text) { await page.evaluate(t => { sessionStorage.__cap = t; let k = document.getElementById('__cap'); if (!k) { k = document.createElement('div'); k.id = '__cap'; document.body.appendChild(k); } k.textContent = t; }, text); },
     // Tag the element found by a function body (returns an Element) so later calls can reach it with a selector.
     async tag(fnBody, name = 'a') { const ok = await page.evaluate((b, n) => { const el = new Function(b)(); if (!el) return false; document.querySelectorAll(`[data-v-${n}]`).forEach(e => e.removeAttribute(`data-v-${n}`)); el.setAttribute(`data-v-${n}`, '1'); return true; }, fnBody, name); if (!ok) throw new Error('element not found: ' + fnBody.slice(0, 90)); return `[data-v-${name}]`; },
@@ -86,13 +87,20 @@ function makeCtx(page) {
 }
 
 // beats: [{ say: 'narration', run: async ctx => {...} }]
-async function makeVideo({ name, who = 'ma', beats, before, after, startPath = '/acp' }) {
+async function makeVideo({ name, who = 'ma', beats, before, after, startPath = '/acp', site = 'acp' }) {
   const outDir = path.join(__dirname, 'out'); fs.mkdirSync(outDir, { recursive: true });
   console.log(`[${name}] narration`);
   const clips = []; for (const b of beats) clips.push(await tts(b.say));
-  const { browser, page } = await open(who, { width: 1280, height: 720 });
+  const { browser, page } = site === 'sch' ? await openSch({ width: 1280, height: 720 }) : await open(who, { width: 1280, height: 720 });
   await page.evaluateOnNewDocument(OVERLAY);
-  const ctx = makeCtx(page);
+  // SCH's booking summary prints its real default account password in plain text ("created with default password: <strong>...</strong>"):
+  // mask it on every page, always, before anything can be filmed.
+  if (site === 'sch') await page.evaluateOnNewDocument(() => {
+    const mask = () => document.querySelectorAll('strong').forEach(e => { if (/default password/i.test(e.parentElement?.textContent || '') && e.textContent !== '••••••') e.textContent = '••••••'; });
+    const boot = () => { mask(); new MutationObserver(mask).observe(document.documentElement, { subtree: true, childList: true, characterData: true }); };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
+  });
+  const ctx = makeCtx(page, site === 'sch' ? 'https://scheduling.dev3.powerdigital.sg' : undefined);
   if (before) await before(ctx);
   await ctx.go(startPath); await sleep(500);
   // Frames come from CDP's screencast with their own timestamps (a frame is only sent when the page changes), so the

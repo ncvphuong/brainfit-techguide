@@ -7,6 +7,12 @@ sidebar_position: 3
 # Create a Class Group
 This feature is for SA, ML, MA, CA
 
+**Watch (about 1 min):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/sch-group.mp4" type="video/mp4" />
+</video>
+
 A class group is one weekly slot of a class (for example *Monday 4:00 PM - 5:50 PM*) for one term. A class can have several groups.
 
 1. Open **⋮ → Classes** and click the **+** (create group) icon on the class's row.

@@ -7,6 +7,12 @@ sidebar_position: 5
 # Unrestricted Session Change
 This feature is for SA, ML, MA
 
+**Watch (about 1 min):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/sch-change.mp4" type="video/mp4" />
+</video>
+
 Moves a student from one session to another, in **any** class group, without the usual change-request limits. Use it for special cases; normal changes go through **Requests**.
 
 1. Open **Requests → New (unrestricted)**. Search the student by name and pick them.

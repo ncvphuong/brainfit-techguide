@@ -7,6 +7,12 @@ sidebar_position: 2
 # View the Schedule
 This feature is for SA, ML, MA, CA, Trainer
 
+**Watch (about 40 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/sch-calendar.mp4" type="video/mp4" />
+</video>
+
 1. Open **Calendar**. Pick the **Centre** (and a class if you like). The month view shows every session as a block; use the arrows to move between months. The training centre's classes start in **January 2027**.
 
 ![Image](./img/sch-calendar-1.png)

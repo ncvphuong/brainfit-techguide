@@ -7,6 +7,12 @@ sidebar_position: 1
 # Create and Edit a Holiday Template
 This feature is for SA, ML, MA, CA
 
+**Watch (about 1 min 20 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/sch-holiday.mp4" type="video/mp4" />
+</video>
+
 A holiday template is the list of public holidays and term breaks for a country and year. Sessions are never created on those dates, and every centre that uses the template follows it.
 
 1. In BrainFit Scheduling, open **⋮ → Holiday Templates**. Each card shows a template, how many holidays it has and how many centres use it. Click **Create Template** for a new one, or **Edit & Manage Dates** to change one.
