@@ -7,6 +7,12 @@ sidebar_position: 4
 # Book a CogMAP Assessment
 This feature is for SA, ML, MA, CA, Front Desk
 
+**Watch (about 1 min):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/sch-cogmap.mp4" type="video/mp4" />
+</video>
+
 1. Open **Booking** and click **Select** on **Cogmap Assessment**.
 
 ![Image](./img/sch-cogmap-1.png)
