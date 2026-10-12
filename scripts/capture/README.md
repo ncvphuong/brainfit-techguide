@@ -12,3 +12,8 @@ Things learnt the hard way:
 - Course **Add resource (+)** creates an empty "media title" resource on the GET; always remove it after.
 - Headless Chrome pauses CSS animations; `lib.js` turns them off so dropdowns aren't caught half-faded.
 - The Reset CogMAP link only shows for SA / ML, so that one shot uses `ml`.
+
+## Training videos (narrated)
+
+`scripts/video/` records the Student create / edit / view walkthroughs against server12 and mixes an ElevenLabs voice-over: `node student-create.js` (then `student-edit.js`, `student-view.js`) from `scripts/video/`, same cookies as above. The key comes from `ELEVENLABS_API_KEY` in the file named by `ELEVEN_ENV_FILE` (default: the user's `motion_graphic/.env`); voice via `VOICE_NAME` (default "Alice"). Narration clips are cached by text in `scripts/video/out/tts-cache`, so re-recording only re-bills lines you changed. Output: `scripts/video/out/<name>.mp4`; copy into `static/video/hq/`.
+Plan and notes: brainfit-ruby `doc/hq/training_center/plan_training_videos_2026-10-12.html`.

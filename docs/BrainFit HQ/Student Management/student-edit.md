@@ -7,6 +7,12 @@ sidebar_position: 2
 # Edit a Student
 This feature is for SA, ML, MA, CA
 
+**Watch (about 1 min):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/student-edit.mp4" type="video/mp4" />
+</video>
+
 1. In **Students**, find the student (search by name or username), then click the **pencil** icon in the Action column.
 
 ![Image](./img/student-edit-1.png)
