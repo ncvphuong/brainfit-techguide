@@ -7,6 +7,12 @@ sidebar_position: 5
 # Edit a Class
 This feature is for SA, ML, MA, CA
 
+**Watch (about 30 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/class-edit.mp4" type="video/mp4" />
+</video>
+
 1. In **Class**, click the **pencil** icon on the class's row (or the pencil on the class page).
 
 ![Image](./img/class-edit-1.png)

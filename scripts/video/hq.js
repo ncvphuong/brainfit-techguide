@@ -8,3 +8,10 @@ const addTab = c => c.tag(`return [...document.querySelectorAll('a')].find(a => 
 const rowIcon = (c, user, icon) => c.tag(`const tr = [...document.querySelectorAll('tbody tr')].find(t => t.textContent.includes(${JSON.stringify(user)})); return tr && tr.querySelector('i.fa-${icon}')?.closest('a,button')`, 'row');
 const SEARCH_NAME = 'input[name="name"]';
 module.exports = { student, menu, addTab, rowIcon, SEARCH_NAME };
+
+// Generic helper-script runner: guide('MODE=create NOCLASS=1'), guide('MODE=class_games STEP=save'), guide('MODE=remove')
+const guide = env => new Promise((res, rej) => execFile('bash', ['-c', REMOTE.replace('MODE=%MODE%', env)], (e, out) => e ? rej(e) : res(String(out).trim().split('\n').filter(l => !/cipher|=====/.test(l)).join('\n'))));
+const CLASS_LIST = '/acp/class_rooms?center_id=132&name=T1%3A+SmartFit+Lower';
+const classRow = (c, icon) => c.tag(`const tr = [...document.querySelectorAll('tbody tr')].find(t => t.querySelector('td')?.textContent.trim() === 'Scholar T1: SmartFit Lower Pri'); return tr && ${icon ? `tr.querySelector('i.fa-${icon}')?.closest('a,button')` : `tr.querySelector('td a')`}`, 'crow');
+const group = (c, label) => c.tag(`const l = [...document.querySelectorAll('.bp-content label')].find(l => l.textContent.trim().startsWith(${JSON.stringify(label)})); return l && (l.closest('.form-group') || l.parentElement)`, 'grp');
+Object.assign(module.exports, { guide, CLASS_LIST, classRow, group });
