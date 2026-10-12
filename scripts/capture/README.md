@@ -19,10 +19,10 @@ Things learnt the hard way:
 Plan and notes: brainfit-ruby `doc/hq/training_center/plan_training_videos_2026-10-12.html`.
 Scheduling (dev, scheduling.dev3.powerdigital.sg): `server/sch_token.rb` (rails runner on server12) mints an API access grant for power_ma_sg; `server/sch_session.py` (manage.py shell in /home/deploy/brainfit-scheduling-dev) turns it into a Django session; save its cookie as `sch_cookie.json` (git-ignored). Set `user_timezone` to Asia/Singapore in that session. `schlib.js` redirects the dev pages' hardcoded production-API call to server12 (dev bug, reported). Then `node sch.js out/sch` and `node tc.js out/tc`.
 
-## Teacher Tools (`docs/Teacher Tools/`)
+## Teacher Tools (`docs/BrainFit HQ/Teacher Tools/`)
 
 Teacher Tools has no dev server, so `tt.js` runs against **production** (tt.brainfitstudio.com), read-only, as the MA account `power_ma_sg` in the practice training centre (#127 on production). Login is a token from an API access grant minted server-side, saved in `tt_token` next to the script (not committed); no password is typed. `useTrainingCentre()` stops before any screenshot if another centre is showing, and the script exits if the page sends any write request.
 
-    node tt.js "../../docs/Teacher Tools/img"
+    node tt.js "../../docs/BrainFit HQ/Teacher Tools/img"
 
 `ttlib.js` still opens `/login/` before the token login: that was the workaround for TT's missing `csrftoken` cookie on token login (fixed in TT 15a366b, 2026-10-12); harmless to keep.
