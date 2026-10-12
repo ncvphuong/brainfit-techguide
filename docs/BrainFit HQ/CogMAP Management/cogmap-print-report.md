@@ -7,6 +7,12 @@ sidebar_position: 4
 # Find and Print a CogMAP V2 Report
 This feature is for SA, ML, MA, CA, Trainer
 
+**Watch (about 40 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/cogmap-print.mp4" type="video/mp4" />
+</video>
+
 Use **Standard Score** to find any student's CogMAP V2 results, including students you don't have open.
 
 1. Open **Reports** in the top menu and click **Standard Score** under **CogMaps V2**.
