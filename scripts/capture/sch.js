@@ -62,6 +62,8 @@ const onlyTraining = page => page.evaluate(() => [...document.querySelectorAll('
   await shot(page, `${OUT}/sch-cogmap-5.png`, { full: true });
   await page.evaluate(() => { const e = [...document.querySelectorAll('[onclick^="selectSession"]')].find(e => /2027-01-11|Jan 11, 2027/.test(e.textContent)); e && e.click(); }); await sleep(1500);
   await btn(/^Continue/); await sleep(2500);
+  // The confirm page prints SCH's real default account password: never let it into a screenshot.
+  await page.evaluate(() => document.querySelectorAll('strong').forEach(e => { if (/default password/i.test(e.parentElement?.textContent || '')) e.textContent = '••••••'; }));
   await tagText(page, 'button', /Confirm/, 'cf', true); await mark(page, '[data-tg-cf]', { pad: 4 }); await shot(page, `${OUT}/sch-cogmap-6.png`, { full: true }); await clear(page);
   // ---- Unrestricted session change (up to Approve, not clicked)
   await goSch(page, '/classrooms/requests/new-2/');
