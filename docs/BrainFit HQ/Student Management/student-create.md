@@ -7,6 +7,12 @@ sidebar_position: 1
 # Create a Student
 This feature is for SA, ML, MA, CA
 
+**Watch (about 1 min):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/student-create.mp4" type="video/mp4" />
+</video>
+
 A student account always belongs to a parent, and normally to a class. Create the parent first if they don't have an account yet.
 
 1. Open **Students** in the top menu, then click **Add** at the top right of the student list.

@@ -7,6 +7,12 @@ sidebar_position: 3
 # View a Student
 This feature is for SA, ML, MA, CA, Trainer, Assistant Coach
 
+**Watch (about 1 min 10 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/student-view.mp4" type="video/mp4" />
+</video>
+
 The student page puts everything about one student on one page: profile, parent, CogMAP, game performance, progress and class sessions, followed by uploads, notes, points and history.
 
 1. In **Students**, click the **magnifier** icon on the student's row.

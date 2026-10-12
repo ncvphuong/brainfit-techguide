@@ -13,4 +13,8 @@ Things learnt the hard way:
 - Headless Chrome pauses CSS animations; `lib.js` turns them off so dropdowns aren't caught half-faded.
 - The Reset CogMAP link only shows for SA / ML, so that one shot uses `ml`.
 
+## Training videos (narrated)
+
+`scripts/video/` records the Student create / edit / view walkthroughs against server12 and mixes an ElevenLabs voice-over: `node student-create.js` (then `student-edit.js`, `student-view.js`) from `scripts/video/`, same cookies as above. The key comes from `ELEVENLABS_API_KEY` in the file named by `ELEVEN_ENV_FILE` (default: the user's `motion_graphic/.env`); voice via `VOICE_NAME` (default "Alice"). Narration clips are cached by text in `scripts/video/out/tts-cache`, so re-recording only re-bills lines you changed. Output: `scripts/video/out/<name>.mp4`; copy into `static/video/hq/`.
+Plan and notes: brainfit-ruby `doc/hq/training_center/plan_training_videos_2026-10-12.html`.
 Scheduling (dev, scheduling.dev3.powerdigital.sg): `server/sch_token.rb` (rails runner on server12) mints an API access grant for power_ma_sg; `server/sch_session.py` (manage.py shell in /home/deploy/brainfit-scheduling-dev) turns it into a Django session; save its cookie as `sch_cookie.json` (git-ignored). Set `user_timezone` to Asia/Singapore in that session. `schlib.js` redirects the dev pages' hardcoded production-API call to server12 (dev bug, reported). Then `node sch.js out/sch` and `node tc.js out/tc`.
