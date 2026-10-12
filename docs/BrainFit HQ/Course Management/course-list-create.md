@@ -7,6 +7,12 @@ sidebar_position: 1
 # Course List and Create a Course
 This feature is for SA, ML, MA
 
+**Watch (about 50 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/course-list.mp4" type="video/mp4" />
+</video>
+
 1. Open **Course** in the top menu. The list shows each course's status, publish date, author, master licensee(s) and categories. Click **Add** at the top right to create a new course.
 
 ![Image](./img/course-list-1.png)

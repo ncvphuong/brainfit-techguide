@@ -7,6 +7,12 @@ sidebar_position: 4
 # Clone a Course
 This feature is for SA and whoever the course's **Access Control** allows to clone
 
+**Watch (about 40 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/course-clone.mp4" type="video/mp4" />
+</video>
+
 1. In the course list, click **Duplicate** on the course's row (or **Clone Course** at the top of its edit page).
 
 ![Image](./img/course-clone-1.png)

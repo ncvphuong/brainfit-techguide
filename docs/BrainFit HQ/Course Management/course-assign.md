@@ -7,6 +7,12 @@ sidebar_position: 5
 # Assign a Course
 This feature is for SA, ML, MA
 
+**Watch (about 30 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/course-assign.mp4" type="video/mp4" />
+</video>
+
 1. In the course list, click **Assign Trainer**, **Assign Parent** or **Assign Student** on the course's row.
 
 ![Image](./img/course-assign-1.png)

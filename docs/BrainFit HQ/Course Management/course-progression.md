@@ -7,6 +7,12 @@ sidebar_position: 3
 # Course Progression and Graduation
 This feature is for SA and the course's author
 
+**Watch (about 1 min):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/course-progression.mp4" type="video/mp4" />
+</video>
+
 Course Progression decides when someone "graduates" from a course and gets a certificate, based on the quizzes in the course.
 
 1. On the course's edit page, find **Course Progression** in the left column and tick **Activate**. Add one or more **exam components**: a name, the quiz it uses, and its weight; the weights must add up to **100%** (the total shows on the right). Set the **Pass mark** and **Which attempt counts**, then **Save** the course.
