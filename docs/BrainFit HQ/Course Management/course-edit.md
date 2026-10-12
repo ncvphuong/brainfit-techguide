@@ -7,6 +7,12 @@ sidebar_position: 2
 # Edit a Course, Topics and Resources
 This feature is for SA and whoever the course's **Access Control** allows to edit (by default the author)
 
+**Watch (about 1 min):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/course-edit.mp4" type="video/mp4" />
+</video>
+
 1. Open the course from the list (pencil). The top row has **Back to courses**, the **Published / Draft** status, **Progression** (when it's turned on) and **Clone Course**. The course details are on the left; the topics on the right.
 
 ![Image](./img/course-edit-1.png)
