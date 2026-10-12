@@ -38,7 +38,7 @@ elsif mode == 'remove'
   u = User.unscoped.find_by(username: 'sgtc27_guide01')
   if u
     u.games.clear rescue nil
-    u.update_columns(deleted: true, username: "sgtc27_guide01_removed_#{Time.now.to_i}", email: "removed_#{Time.now.to_i}_#{u.email}")
+    u.update_columns(deleted: true, class_room_id: nil, username: "sgtc27_guide01_removed_#{Time.now.to_i}", email: "removed_#{Time.now.to_i}_#{u.email}")
     puts "removed #{u.id}"
   else
     puts 'nothing to remove'

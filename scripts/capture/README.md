@@ -5,7 +5,7 @@ Re-takes the screenshots in `docs/BrainFit HQ/` against **server12 (dev) only**,
 1. `npm i puppeteer-core@23` in this folder (uses the installed Google Chrome).
 2. Session cookies (no password typed anywhere): copy `server/mint.rb` to server12 and run it with `rails runner`. It writes `/home/deploy/cap_cookies.json` for `ca` (sgtc27_ca01), `ma` (power_ma_sg), `ml` (sggroupml) and `author` (power_ml, course 338's author). Copy that file here as `cookies.json` (git-ignored), then delete it from the server.
 3. `server/guide_student.rb` and `server/m338.rb` must also be on server12 (`/home/deploy/`). They create and remove the temporary example student, snapshot / restore class 1407's games, and remove the empty resource "+" creates on course 338.
-4. Run a section: `node student.js out/student`, `class.js`, `cogmap.js`, `course.js` (+ `addres.js`), `intro.js`. Check with `python3 sheet.py out/<section> sheet.png`, then copy the PNGs into the section's `img/` folder.
+4. Run a section: `node student.js out/student`, `class.js`, `program.js` (creates a temporary "SG BF Training Demo" program on server12, adds class 1407, then removes it with `server/guide_program.rb`, which must be on server12 too), `cogmap.js`, `course.js` (+ `addres.js`), `intro.js`. Check with `python3 sheet.py out/<section> sheet.png`, then copy the PNGs into the section's `img/` folder.
 
 Things learnt the hard way:
 - Class **Add Games** replaces the class's whole game list: restore the full set (game + subgames), not row ids.
@@ -25,4 +25,4 @@ Teacher Tools has no dev server, so `tt.js` runs against **production** (tt.brai
 
     node tt.js "../../docs/Teacher Tools/img"
 
-TT bug worked around in `ttlib.js`: token login never sets Django's `csrftoken` cookie, so the centre switch 403s until a page with a form (`/login/`) has been opened.
+`ttlib.js` still opens `/login/` before the token login: that was the workaround for TT's missing `csrftoken` cookie on token login (fixed in TT 15a366b, 2026-10-12); harmless to keep.
