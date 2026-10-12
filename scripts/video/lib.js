@@ -93,6 +93,10 @@ async function makeVideo({ name, who = 'ma', beats, before, after, startPath = '
   const clips = []; for (const b of beats) clips.push(await tts(b.say));
   const { browser, page } = site === 'sch' ? await openSch({ width: 1280, height: 720 }) : await open(who, { width: 1280, height: 720 });
   await page.evaluateOnNewDocument(OVERLAY);
+  // 'Leave page?' (beforeunload) dialogs must be accepted, or leaving the heavy report page never completes; other dialogs are dismissed.
+  // A link that opens a new tab would hide the filmed tab (screenshots then stall): close any extra page right away.
+  browser.on('targetcreated', async t => { if (t.type() === 'page') { const p = await t.page().catch(() => null); if (p && p !== page) { await p.close().catch(() => {}); await page.bringToFront().catch(() => {}); } } });
+  page.removeAllListeners('dialog'); page.on('dialog', d => (d.type() === 'beforeunload' ? d.accept() : d.dismiss()).catch(() => {}));
   // SCH's booking summary prints its real default account password in plain text ("created with default password: <strong>...</strong>"):
   // mask it on every page, always, before anything can be filmed.
   if (site === 'sch') await page.evaluateOnNewDocument(() => {
