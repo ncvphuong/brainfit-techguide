@@ -7,6 +7,12 @@ sidebar_position: 3
 # View CogMAP V2 Results
 This feature is for SA, ML, MA, CA, Trainer
 
+**Watch (about 1 min):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/cogmap-results.mp4" type="video/mp4" />
+</video>
+
 1. Open the student's page (in **Students**, click the **magnifier** icon). The **CogMAP V2** card shows how many sessions are completed, the average score, and each skill's score (Motor, Visual, Auditory, Focus, Emotions) for every round. Click **Open** on a round to see its full report.
 
 ![Image](./img/cogmap-results-1.png)

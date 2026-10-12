@@ -7,6 +7,12 @@ sidebar_position: 5
 # Merge CogMAP V2 Scores
 This feature is for SA, ML, MA
 
+**Watch (about 50 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/cogmap-merge.mp4" type="video/mp4" />
+</video>
+
 Use this when a student's assessment was split over two or more sessions, to combine the scores into one round.
 
 1. Open **Reports** and click **Merge Score** under **CogMaps V2**.

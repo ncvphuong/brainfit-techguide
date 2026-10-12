@@ -7,6 +7,12 @@ sidebar_position: 6
 # Reset or Delete a Student's CogMAP Sessions
 This feature is for SA, ML
 
+**Watch (about 45 s):**
+
+<video controls preload="metadata" width="100%">
+  <source src="/video/hq/cogmap-reset.mp4" type="video/mp4" />
+</video>
+
 :::danger
 This is a permanent delete. The session data can't be restored.
 :::
