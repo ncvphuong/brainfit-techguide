@@ -12,3 +12,5 @@ Things learnt the hard way:
 - Course **Add resource (+)** creates an empty "media title" resource on the GET; always remove it after.
 - Headless Chrome pauses CSS animations; `lib.js` turns them off so dropdowns aren't caught half-faded.
 - The Reset CogMAP link only shows for SA / ML, so that one shot uses `ml`.
+
+Scheduling (dev, scheduling.dev3.powerdigital.sg): `server/sch_token.rb` (rails runner on server12) mints an API access grant for power_ma_sg; `server/sch_session.py` (manage.py shell in /home/deploy/brainfit-scheduling-dev) turns it into a Django session; save its cookie as `sch_cookie.json` (git-ignored). Set `user_timezone` to Asia/Singapore in that session. `schlib.js` redirects the dev pages' hardcoded production-API call to server12 (dev bug, reported). Then `node sch.js out/sch` and `node tc.js out/tc`.
