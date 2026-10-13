@@ -7,7 +7,7 @@ sidebar_position: 6
 # Course Progression and Graduation
 This feature is for Super Admin and the course's author.
 
-**Watch (about 1 min):**
+**Watch (about 2 minutes):**
 
 <video controls preload="metadata" width="100%">
   <source src="/video/hq/course-progression.mp4" type="video/mp4" />
