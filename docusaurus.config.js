@@ -85,7 +85,7 @@ const config = {
             title: 'Products',
             items: [
               {
-                label: 'CogMap',
+                label: 'CogMAP',
                 href: 'http://cm.brainfitstudio.com/',
               },
               {
