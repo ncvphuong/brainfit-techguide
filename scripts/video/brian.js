@@ -22,15 +22,20 @@ makeVideo({
       run: async c => {
         const s = await c.tag(`return document.querySelector('input[aria-label="Search"]')`, 'srch'); await c.click(s); await c.page.keyboard.type(`How is ${STU} doing this month?`, { delay: 55 }); await c.sleep(1800);
         await c.tag(`return [...document.querySelectorAll('*')].find(e => e.children.length < 4 && e.offsetParent && /Ask Brian \\(BrainFit AI\\)/.test(e.textContent) && e.textContent.length < 120)?.closest('a,li,div[role],div')`, 'row').then(r => c.hl(r, 3)).catch(() => {});
-        await c.sleep(2500); await c.unhl(); await c.page.keyboard.press('Enter'); await c.page.waitForSelector('#bcLog', { timeout: 30000 }); await settle(c, 6000);
+        await c.sleep(2500); await c.unhl(); await c.page.keyboard.press('Enter'); await c.page.waitForSelector('#bcLog', { timeout: 90000 }); await settle(c, 6000);
       } },
     { say: 'Brian answers word by word. Your question is on the right and his answer is on the left, with the figures and the links to the student profile and the progress report. Recent chats are listed on the left, and New chat starts a fresh one.',
       run: async c => {
         const side = await c.tag(`return document.getElementById('bcSide')`, 'side'); await c.hl(side, 3); await c.glide(side); await c.sleep(2500); await c.unhl();
         const a = await c.tag(`return [...document.querySelectorAll('#bcLog a')].find(a => /profile|report/i.test(a.textContent))`, 'lnk').catch(() => null); if (a) { await c.hl(a, 4); await c.glide(a); await c.sleep(2500); await c.unhl(); }
       } },
-    { say: 'If two students share a name, use the username, like this one. For CogMAP, Brian always gives the standard score and what it means, never the raw score, SD or mean, even if you ask. He tells you so, and explains the standard score instead.',
-      run: async c => { await fresh(c); await ask(c, `Show ${STU}'s CogMAP results and tell me the raw score and SD`); await settle(c, 5000); const b = await c.tag(`return [...document.querySelectorAll('#bcLog .bc-bubble')].pop()`, 'ans').catch(() => null); if (b) { await c.hl(b, 4); await c.glide(b); } await c.sleep(2500); } },
+    { say: 'For CogMAP, Brian always gives the standard score and what it means: the band, the description, and what to work on. He never gives the raw score, SD or mean, even if you ask. He tells you so, and uses the standard score instead. If two students share a name, use the username, like here.',
+      run: async c => {
+        await fresh(c); await ask(c, `Show ${STU}'s CogMAP results and what to work on. What are the raw score and SD?`); await settle(c, 6000);
+        await c.page.evaluate(() => { document.getElementById('bcLog').scrollTop = 0; }); await c.sleep(2500);
+        await c.page.evaluate(() => document.getElementById('bcLog').scrollTo({ top: 400, behavior: 'smooth' })); await c.sleep(5000);
+        await c.page.evaluate(() => document.getElementById('bcLog').scrollTo({ top: 99999, behavior: 'smooth' })); await c.sleep(3000);
+      } },
     { say: 'Ask in English, Chinese, Bahasa Indonesia or Turkish, and Brian replies in the same language.',
       run: async c => { await c.unhl(); await fresh(c); await ask(c, `${STU} 这个月的训练情况怎么样？请用中文回答`); await settle(c, 5000); await c.sleep(1500); } },
     { say: 'Brian can prepare a note or a reminder for you. He shows a Confirm card with exactly what he will save, and nothing is saved until you click Confirm. Here we click Cancel, so nothing changes. Brian cannot reset progress, remove students or delete anything.',

@@ -24,7 +24,7 @@ async function menu(page, group, item) {
   // ---- Class: levels & questions
   await go(page, `/acp/class_rooms/${CLASS_ID}/show_game`);
   await page.evaluate(() => {
-    const h = [...document.querySelectorAll('h1,h2,h3,h4,h5,.panel-title,label,p,div')].find(e => e.children.length === 0 && e.textContent.trim() === 'CogMap V2 Questions');
+    const h = [...document.querySelectorAll('h1,h2,h3,h4,h5,.panel-title,label,p,div')].find(e => e.children.length === 0 && e.textContent.trim() === 'CogMAP V2 Questions');
     const after = el => h && (h.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING);
     const sel = [...document.querySelectorAll('select')].find(after);
     (sel?.nextElementSibling?.classList.contains('select2') ? sel.nextElementSibling : sel)?.setAttribute('data-tg-v2', '1');
@@ -43,7 +43,7 @@ async function menu(page, group, item) {
   // ---- Student: levels & questions + reset link
   await go(page, `/acp/students/${SID}/show_game`);
   await page.evaluate(() => {
-    const h = [...document.querySelectorAll('h1,h2,h3,h4,h5,.panel-title,label,p,div')].find(e => e.children.length === 0 && e.textContent.trim() === 'CogMap V2 Questions');
+    const h = [...document.querySelectorAll('h1,h2,h3,h4,h5,.panel-title,label,p,div')].find(e => e.children.length === 0 && e.textContent.trim() === 'CogMAP V2 Questions');
     const after = el => h && (h.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING);
     const sel = [...document.querySelectorAll('select')].find(after);
     (sel?.nextElementSibling?.classList.contains('select2') ? sel.nextElementSibling : sel)?.setAttribute('data-tg-v2', '1');
@@ -72,7 +72,7 @@ async function menu(page, group, item) {
   }
   // ---- Standard Score (search + print)
   await go(page, '/acp/cog_maps_v2/standard_score');
-  await menu(page, 'CogMaps V2', 'Standard Score'); await shot(page, `${OUT}/cogmap-print-1.png`, { clip: { x: 0, y: 0, width: 1600, height: 460 } }); await clear(page); await page.mouse.click(1500, 850);
+  await menu(page, 'CogMAP V2', 'Standard Score'); await shot(page, `${OUT}/cogmap-print-1.png`, { clip: { x: 0, y: 0, width: 1600, height: 460 } }); await clear(page); await page.mouse.click(1500, 850);
   await go(page, '/acp/cog_maps_v2/standard_score?center_id=132&name=Sarah+Ng');
   await page.evaluate(() => { document.querySelector('input[name="name"]')?.closest('div')?.setAttribute('data-tg-q', '1'); const a = [...document.querySelectorAll('tbody a')].find(a => a.textContent.trim() === 'Sarah Ng'); a?.setAttribute('data-tg-stu', '1'); });
   await mark(page, '[data-tg-q]', { pad: 3 }); await mark(page, '[data-tg-stu]', { pad: 4 });
@@ -86,7 +86,7 @@ async function menu(page, group, item) {
   }
   // ---- Merge Score (highlight only)
   await go(page, '/acp/cog_maps_v2/merge-score');
-  await menu(page, 'CogMaps V2', 'Merge Score'); await shot(page, `${OUT}/cogmap-merge-1.png`, { clip: { x: 0, y: 0, width: 1600, height: 460 } }); await clear(page); await page.mouse.click(1500, 850);
+  await menu(page, 'CogMAP V2', 'Merge Score'); await shot(page, `${OUT}/cogmap-merge-1.png`, { clip: { x: 0, y: 0, width: 1600, height: 460 } }); await clear(page); await page.mouse.click(1500, 850);
   await go(page, '/acp/cog_maps_v2/merge-score?center_id=132&name=Sarah+Ng');
   await page.evaluate(() => [...document.querySelectorAll('a')].find(a => a.textContent.trim() === 'Merge questions')?.setAttribute('data-tg-mq', '1'));
   await mark(page, '[data-tg-mq]', { pad: 4 }); await shot(page, `${OUT}/cogmap-merge-2.png`); await clear(page);
@@ -106,7 +106,7 @@ async function menu(page, group, item) {
     await ml.browser.close();
   }
   await go(page, `/acp/students/${SID}/reset_cog_map`);
-  await page.evaluate(() => { [...document.querySelectorAll('a,button')].filter(b => /^Reset( All CogMap Progress)?$/.test(b.textContent.trim())).forEach(b => b.setAttribute('data-tg-rs', '1')); });
+  await page.evaluate(() => { [...document.querySelectorAll('a,button')].filter(b => /^Reset( All CogMAP Progress)?$/.test(b.textContent.trim())).forEach(b => b.setAttribute('data-tg-rs', '1')); });
   await mark(page, '[data-tg-rs]', { pad: 3 }); await shot(page, `${OUT}/cogmap-reset-2.png`, { clip: { x: 0, y: 0, width: 1600, height: 560 } }); await clear(page);
   await browser.close();
 })().catch(e => { console.error(e); process.exit(1); });
