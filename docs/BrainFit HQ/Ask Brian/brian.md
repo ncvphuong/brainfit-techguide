@@ -2,12 +2,12 @@
 id: bhq-brian
 title: Ask Brian, the BrainFit AI assistant
 sidebar_label: Ask Brian
-sidebar_position: 7
+sidebar_position: 1
 ---
 # Ask Brian, the BrainFit AI assistant
 Brian is BrainFit's AI assistant inside Brain HQ. Ask him in plain words, such as *"How is Minh doing this month?"*, and he answers from your Brain HQ data, with links to the real pages. Brian is being tried out with a small group first: Super Admin and the Master Admins of SG Group ML.
 
-**Watch (about 2 minutes):**
+**Watch (about 2½ minutes):**
 
 <video controls preload="metadata" width="100%">
   <source src="/video/hq/brian.mp4" type="video/mp4" />
@@ -50,7 +50,7 @@ The chat page works like a chat app: your messages are on the right and Brian's 
 
 ## 5. CogMAP: standard scores only
 
-For CogMAP, Brian always gives the **standard score** and what it means: the band, the description, and the strategy or recommendation. He never gives the raw score, SD or mean, even if you ask. He tells you so, and explains the standard score instead.
+For CogMAP, Brian always gives the **standard score** and what it means: the band (such as High or Low), the description, and the strategy or recommendation for the areas to work on. He never gives the raw score, SD or mean, even if you ask. He tells you so, and uses the standard score instead.
 
 ![Image](./img/brian-5.png)
 
