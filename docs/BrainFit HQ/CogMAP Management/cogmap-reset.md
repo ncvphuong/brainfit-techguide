@@ -17,10 +17,10 @@ This feature is for SA, ML
 This is a permanent delete. The session data can't be restored.
 :::
 
-1. Open the student's **Game config** page and click **Reset** next to **Reset CogMap Progress**.
+1. Open the student's **Game config** page and click **Reset** next to **Reset CogMAP Progress**.
 
 ![Image](./img/cogmap-reset-1.png)
 
-2. The page lists the student's CogMAP sessions. Click **Reset** on one session to delete just that session, or **Reset All CogMap Progress** to delete all of them. The student's CogMAP setup (preset and questions) is switched off at the same time, so set it up again if they need to retake it.
+2. The page lists the student's CogMAP sessions. Click **Reset** on one session to delete just that session, or **Reset All CogMAP Progress** to delete all of them. The student's CogMAP setup (preset and questions) is switched off at the same time, so set it up again if they need to retake it.
 
 ![Image](./img/cogmap-reset-2.png)

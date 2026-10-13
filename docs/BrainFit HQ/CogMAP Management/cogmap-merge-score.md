@@ -15,7 +15,7 @@ This feature is for SA, ML, MA
 
 Use this when a student's assessment was split over two or more sessions, to combine the scores into one round.
 
-1. Open **Reports** and click **Merge Score** under **CogMaps V2**.
+1. Open **Reports** and click **Merge Score** under **CogMAP V2**.
 
 ![Image](./img/cogmap-merge-1.png)
 

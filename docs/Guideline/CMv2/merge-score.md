@@ -8,7 +8,7 @@ sidebar_position: 2
 This feature is for SA, ML
 
 1. **Login** with an admin account.  
-2. Click **"CogMaps V2"**.  
+2. Click **"CogMAP V2"**.  
 
 ![Image](./img/merge-score-1.png)
 

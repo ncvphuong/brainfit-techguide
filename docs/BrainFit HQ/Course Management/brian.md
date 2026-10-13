@@ -2,7 +2,7 @@
 id: bhq-brian
 title: Ask Brian, the BrainFit AI assistant
 sidebar_label: Ask Brian
-sidebar_position: 1
+sidebar_position: 7
 ---
 # Ask Brian, the BrainFit AI assistant
 Brian is BrainFit's AI assistant inside Brain HQ. Ask him in plain words, such as *"How is Minh doing this month?"*, and he answers from your Brain HQ data, with links to the real pages. Brian is being tried out with a small group first: Super Admin and the Master Admins of SG Group ML.

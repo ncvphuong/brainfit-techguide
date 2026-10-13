@@ -15,7 +15,7 @@ This feature is for SA, ML, MA, CA, Trainer
 
 Use **Standard Score** to find any student's CogMAP V2 results, including students you don't have open.
 
-1. Open **Reports** in the top menu and click **Standard Score** under **CogMaps V2**.
+1. Open **Reports** in the top menu and click **Standard Score** under **CogMAP V2**.
 
 ![Image](./img/cogmap-print-1.png)
 

@@ -37,7 +37,7 @@ There are two ways to a student's CogMAP V2 results: from the student's own page
 
 Use this to find any student's results, including students you don't have open.
 
-1. Open **Reports** in the top menu and click **Standard Score** under **CogMaps V2**.
+1. Open **Reports** in the top menu and click **Standard Score** under **CogMAP V2**.
 
 ![Image](./img/cogmap-print-1.png)
 

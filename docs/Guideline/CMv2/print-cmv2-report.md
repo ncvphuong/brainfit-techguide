@@ -10,7 +10,7 @@ This feature is for SA, ML, CA, Trainer
 ## Steps to Access the Report  
 
 1. Navigate to [ACP Portal](https://acp.brainfitstudio.com/acp).  
-2. Click **"CogMaps V2"**.  
+2. Click **"CogMAP V2"**.  
 
 ![Image](./img/print-cmv2-report-1.png)
 
