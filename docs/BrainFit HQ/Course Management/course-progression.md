@@ -5,7 +5,7 @@ sidebar_label: Course Progression
 sidebar_position: 3
 ---
 # Course Progression and Graduation
-This feature is for SA and the course's author
+This feature is for Super Admin and the course's author.
 
 **Watch (about 1 min):**
 
@@ -13,14 +13,81 @@ This feature is for SA and the course's author
   <source src="/video/hq/course-progression.mp4" type="video/mp4" />
 </video>
 
-Course Progression decides when someone "graduates" from a course and gets a certificate, based on the quizzes in the course.
+Course Progression decides when someone **graduates** from a course, based on their quiz scores. Trainers, parents and students take the course's quizzes in the app; once their weighted score reaches the pass mark, they graduate and get a certificate.
 
-1. On the course's edit page, find **Course Progression** in the left column and tick **Activate**. Add one or more **exam components**: a name, the quiz it uses, and its weight; the weights must add up to **100%** (the total shows on the right). Set the **Pass mark** and **Which attempt counts**, then **Save** the course.
+## 1. Before you start: the course needs quizzes
+
+Progression only works with quizzes. Each exam must be a **Quiz resource inside a topic** of the course:
+
+1. On the course's edit page, find the topic and click **+** next to **Add resource**.
+2. Set **Type** to **Quiz**, choose the quiz (or click **Create new quiz**), and **Save**.
 
 ![Image](./img/course-progression-1.png)
 
-2. Click **Progression** at the top of the course (or **View progression dashboard**). The page shows the pass mark, the components, and each trainer, parent or student's score per component, overall score, graduation date and certificate link.
-
 ![Image](./img/course-progression-2.png)
 
-**Note:** only quizzes already added to the course's topics can be picked. If the weights don't add up to 100%, the course isn't saved and the form shows the error.
+If the course has no quizzes yet, the Progression box shows *"This course has no quizzes attached to its topics yet. Add a Quiz resource before setting exam components."* and no exam can be picked.
+
+**Who can see and change it:** only Super Admin and the course's author see the Course Progression box.
+
+## 2. Turn it on
+
+On the course's edit page, find the **Course Progression** box in the left column and tick **Activate**. The settings open below it.
+
+## 3. Add the exam components
+
+Click **Add exam component** for each exam, and fill in:
+
+- **Label**: the name people will see, for example *Final Exam*.
+- **Quiz**: pick one of the course's quizzes.
+- **Weight (%)**: how much this exam counts.
+
+You can add as many exams as you need (5 is fine). The weights must add up to **exactly 100%**: the **Total** on the right turns green at 100%. If it isn't 100, **Save** is rejected with *"Exam component weights must add up to 100%"*.
+
+![Image](./img/course-progression-3.png)
+
+## 4. Pass mark and which attempt counts
+
+- **Pass mark (%)**: the overall score someone needs to graduate.
+- **Which attempt counts**, when someone takes a quiz more than once:
+  - **Best score ever**: their highest score counts.
+  - **Most recent attempt**: only the latest attempt counts.
+  - **First attempt only**: retries don't count.
+
+Click **Save** at the bottom of the course page when you're done.
+
+## 5. How people graduate
+
+The trainer, parent or student takes the quizzes in the app. Scores update on the dashboard within about a minute.
+
+- The **overall score** is the weighted blend of all exams.
+- **All exams are required**: someone has to take every exam before they can graduate.
+- **Overall score ≥ pass mark** means graduated.
+- If someone changes an answer before submitting, the last answer counts.
+
+## 6. The Progression dashboard
+
+Click **Progression** in the top bar of the course edit page (or **View progression dashboard →** in the Course Progression box).
+
+![Image](./img/course-progression-4.png)
+
+The page lists the pass mark and exams, then one row per person:
+
+| Column | What it shows |
+|---|---|
+| Person | Name |
+| Role | Trainer, Parent or Student |
+| Exams | One line per exam with the score, or **Not yet** |
+| Overall | The weighted score |
+| Graduated | The date they passed |
+| Certificate | **View** once they've graduated |
+
+![Image](./img/course-progression-6.png)
+
+## 7. Certificate
+
+Click **View** to open the person's certificate page. **Download PDF** saves it.
+
+![Image](./img/course-progression-5.png)
+
+**Coming soon:** a newer certificate design (with the logo and the exam mark) is being built in the CRM, but it isn't linked to graduation automatically yet.
