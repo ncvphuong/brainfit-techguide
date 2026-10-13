@@ -2,7 +2,7 @@
 id: bhq-course-progression
 title: Course Progression and Graduation
 sidebar_label: Course Progression
-sidebar_position: 3
+sidebar_position: 6
 ---
 # Course Progression and Graduation
 This feature is for Super Admin and the course's author.
@@ -86,10 +86,8 @@ The page lists the pass mark and exams, then one row per person:
 
 ## 7. Certificate
 
-Click **View** to open the person's certificate page.
+Click **View** to open the person's certificate page. It shows the BrainFit logo, the course, the person's average exam mark, the date, a seal and a verification code, with a **Verified** badge and a details box underneath. Anyone with the link can view it, so it can be used to verify the certificate.
 
 ![Image](./img/course-progression-5.png)
 
-Click **Download PDF** there. The certificate is issued only when someone clicks it (nothing is created automatically), and the BrainFit certificate page opens with the logo, the person's average exam mark and a verification code. From it you can **Download PDF**, **Print**, **Copy link** or **Share**. Anyone with the link can view it, so it can be used to verify the certificate.
-
-![Image](./img/course-progression-7.png)
+From this page you can **Print** or **Copy link**. Click **Download PDF** to open the BrainFit certificate copy, where you can download or print it. The copy is issued only when someone clicks Download PDF (nothing is created automatically).
