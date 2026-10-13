@@ -86,8 +86,10 @@ The page lists the pass mark and exams, then one row per person:
 
 ## 7. Certificate
 
-Click **View** to open the person's certificate page. **Download PDF** saves it.
+Click **View** to open the person's certificate page.
 
 ![Image](./img/course-progression-5.png)
 
-**Coming soon:** a newer certificate design (with the logo and the exam mark) is being built in the CRM, but it isn't linked to graduation automatically yet.
+Click **Download PDF** there. The certificate is issued only when someone clicks it (nothing is created automatically), and the BrainFit certificate page opens with the logo, the person's average exam mark and a verification code. From it you can **Download PDF**, **Print**, **Copy link** or **Share**. Anyone with the link can view it, so it can be used to verify the certificate.
+
+![Image](./img/course-progression-7.png)
