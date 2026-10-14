@@ -70,7 +70,7 @@ const OVERLAY = () => {
 function makeCtx(page, base = 'https://brainfit.dev3.powerdigital.sg') {
   const ctx = {
     page, sleep,
-    async go(p) { await page.goto(base + p, { waitUntil: 'networkidle2', timeout: 60000 }); await page.addStyleTag({ content: '*{animation-duration:0s!important;transition:none!important}.__rip,.__hl,#__cap,#__cur{animation:revert!important}' }).catch(() => {}); await sleep(500); },
+    async go(p) { await page.goto(/^https?:/.test(p) ? p : base + p, { waitUntil: 'networkidle2', timeout: 60000 }); await page.addStyleTag({ content: '*{animation-duration:0s!important;transition:none!important}.__rip,.__hl,#__cap,#__cur{animation:revert!important}' }).catch(() => {}); await sleep(500); },
     async caption(text) { await page.evaluate(t => { sessionStorage.__cap = t; let k = document.getElementById('__cap'); if (!k) { k = document.createElement('div'); k.id = '__cap'; document.body.appendChild(k); } k.textContent = t; }, text); },
     // Tag the element found by a function body (returns an Element) so later calls can reach it with a selector.
     async tag(fnBody, name = 'a') { const ok = await page.evaluate((b, n) => { const el = new Function(b)(); if (!el) return false; document.querySelectorAll(`[data-v-${n}]`).forEach(e => e.removeAttribute(`data-v-${n}`)); el.setAttribute(`data-v-${n}`, '1'); return true; }, fnBody, name); if (!ok) throw new Error('element not found: ' + fnBody.slice(0, 90)); return `[data-v-${name}]`; },
@@ -117,9 +117,9 @@ async function makeVideo({ name, who = 'ma', beats, before, after, startPath = '
   await ctx.caption(' ').catch(() => {}); await sleep(900);
   const starts = [];
   for (let i = 0; i < beats.length; i++) {
-    const s = Date.now(); starts.push(s / 1000);
+    const s = Date.now(); starts.push(s / 1000); if (process.env.VIDEO_DEBUG) console.log(`  beat ${i + 1} start`);
     await ctx.caption(beats[i].say).catch(() => {});
-    try { await beats[i].run(ctx); } catch (e) { console.error(`[${name}] beat ${i + 1} failed: ${e.message}`); recording = false; await poller; await browser.close(); if (after) await after().catch(() => {}); throw e; }
+    try { await beats[i].run(ctx); } catch (e) { console.error(`[${name}] beat ${i + 1} failed: ${e.message}`); if (process.env.VIDEO_DEBUG) console.error(e.stack); recording = false; await poller; await browser.close(); if (after) await after().catch(() => {}); throw e; }
     const left = clips[i].dur * 1000 + 700 - (Date.now() - s); if (left > 0) await sleep(left); else console.log(`  beat ${i + 1} actions overran narration by ${(-left / 1000).toFixed(1)}s`);
     await ctx.unhl().catch(() => {});
   }
