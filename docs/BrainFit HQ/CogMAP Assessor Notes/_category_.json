@@ -1,0 +1,8 @@
+{
+  "label": "CogMAP Assessor Notes",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Fill in assessor notes for a CogMAP assessment, and build the forms they use."
+  }
+}
