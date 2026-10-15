@@ -1,0 +1,22 @@
+// CoachSpace: Calendar and Sessions. Read-only (the day "+" menu is opened and closed without saving).
+const { show, showCss, nav, run } = require('./cslib');
+const WEEK = '/coachspace/calendar?week=2027-01-04';
+run({
+  name: 'cs-calendar', startPath: WEEK,
+  beats: [
+    { say: 'Calendar shows your sessions. The practice centre in this video runs in 2027, so we are looking at the first week of January. Your own calendar opens on the current week.',
+      run: async c => { await c.sleep(1000); await show(c, 'h1, h2, div', '^Calendar', { name: 'h', ms: 1500 }); await show(c, 'div, span', '^4 Jan', { name: 'wk', ms: 1800 }); } },
+    { say: 'Use the arrows to move one week back or forward, and Today to jump back to the current week. Week and Sessions at the top right switch between this weekly grid and a plain list of upcoming sessions.',
+      run: async c => { const l = await c.tag(`return [...document.querySelectorAll('a')].find(e => e.offsetParent && /calendar\\?week=/.test(e.getAttribute('href')) && e.querySelector('i, svg') && !/Today/.test(e.textContent))`, 'pv').catch(() => null); if (l) { await c.hl(l, 5); await c.glide(l); await c.sleep(1400); await c.unhl(); } await show(c, 'a, button', '^Today$', { name: 'td', ms: 1400 }); await show(c, 'a, button', '^Week$', { name: 'wk2', ms: 1200 }); await show(c, 'a, button', '^Sessions$', { name: 'se', ms: 1400 }); } },
+    { say: 'Each class is a card on its day, with the class time, the class name, the trainer, and the teaching week of the term. The brackets show how many students are in the class and how many it can take.',
+      run: async c => { const k = await c.tag(`return [...document.querySelectorAll('button')].find(b => b.offsetParent && /^Monday 4:00 PM/.test(b.textContent.trim()))`, 'cd'); await c.hl(k, 5); await c.glide(k); await c.sleep(4500); await c.unhl(); } },
+    { say: 'Click a class to open its details. You see the date and time, the trainer, the capacity, and every student booked in, and a click on a student\'s name opens their page. Open in Scheduling takes you to the full class record.',
+      run: async c => { const k = await c.tag(`return [...document.querySelectorAll('button')].find(b => b.offsetParent && /^Monday 4:00 PM/.test(b.textContent.trim()))`, 'cd'); await c.click(k); await c.sleep(2500); await show(c, 'h3, div, span', '^Students \\(3\\)', { name: 'st', ms: 2200 }); await show(c, 'a', 'Open in Scheduling', { name: 'os', ms: 1800 }); } },
+    { say: 'The coloured buttons above the grid switch layers on and off: Sessions, CogMAP sessions, CogMAP due dates, progress meetings, and tasks. Turn off what you do not need, so you only see the layer you are working on.',
+      run: async c => { await c.page.mouse.move(100, 400); await c.page.mouse.click(100, 400); await c.sleep(900); for (const l of ['Sessions', 'CogMAP', 'CM Due', 'P.Meeting', 'Tasks']) { await show(c, 'button', '^' + l.replace('.', '\\.') + '$', { name: 'ly', ms: 700 }); } const s = await c.tag(`return [...document.querySelectorAll('button')].find(b => b.offsetParent && b.textContent.trim() === 'Sessions')`, 'ly2'); await c.click(s); await c.sleep(1800); await c.click(s); await c.sleep(1500); } },
+    { say: 'The plus at the top of each day adds a progress meeting or a task on that day.',
+      run: async c => { const p = await c.tag(`return [...document.querySelectorAll('button')].filter(b => b.offsetParent && b.textContent.trim() === '+')[2]`, 'pl').catch(() => null); if (p) { await c.hl(p, 5); await c.glide(p); await c.sleep(1200); await c.unhl(); await c.page.mouse.click(...(await c.pos())); await c.sleep(2600); await c.page.keyboard.press('Escape'); await c.page.mouse.click(640, 640); await c.sleep(600); } } },
+    { say: 'The Calendar menu also opens Sessions, a plain list of the sessions coming up in the next seven, fourteen or thirty days, with the CogMAP sessions kept apart. When nothing is booked, it says so, as it does here.',
+      run: async c => { await c.go('/coachspace/calendar?view=sessions'); await c.sleep(1200); await show(c, 'a, button', '^14d$', { name: 'd14', ms: 1500 }); await show(c, 'h2, h3, div', '^Sessions$', { name: 'sl', ms: 1500 }); await show(c, 'h2, h3, div', '^CogMAP$', { name: 'cl', ms: 1800 }); const m = await c.tag(`return document.getElementById('calNavCaret')`, 'cc'); await c.hl(m, 5); await c.glide(m); await c.sleep(800); await c.unhl(); await c.page.mouse.click(...(await c.pos())); await c.sleep(2800); } },
+  ],
+});

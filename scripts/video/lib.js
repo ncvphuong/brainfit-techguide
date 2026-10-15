@@ -95,7 +95,7 @@ async function makeVideo({ name, who = 'ma', beats, before, after, startPath = '
   await page.evaluateOnNewDocument(OVERLAY);
   // 'Leave page?' (beforeunload) dialogs must be accepted, or leaving the heavy report page never completes; other dialogs are dismissed.
   // A link that opens a new tab would hide the filmed tab (screenshots then stall): close any extra page right away.
-  browser.on('targetcreated', async t => { if (t.type() === 'page') { const p = await t.page().catch(() => null); if (p && p !== page) { await p.close().catch(() => {}); await page.bringToFront().catch(() => {}); } } });
+  browser.on('targetcreated', async t => { if (t.type() === 'page' && t.opener()) { const p = await t.page().catch(() => null); if (p && p !== page) { await p.close().catch(() => {}); await page.bringToFront().catch(() => {}); } } });
   page.removeAllListeners('dialog'); page.on('dialog', d => (d.type() === 'beforeunload' ? d.accept() : d.dismiss()).catch(() => {}));
   // SCH's booking summary prints its real default account password in plain text ("created with default password: <strong>...</strong>"):
   // mask it on every page, always, before anything can be filmed.
@@ -113,7 +113,7 @@ async function makeVideo({ name, who = 'ma', beats, before, after, startPath = '
   // Frames are taken by polling page.screenshot (CDP's screencast stalled behind some overlays and stopped sending frames).
   const frames = []; let recording = true;
   const cdp = { send: async () => { recording = false; } };
-  const poller = (async () => { while (recording) { const t = Date.now() / 1000; try { const f = path.join(frameDir, String(frames.length).padStart(6, '0') + '.jpg'); await page.screenshot({ path: f, type: 'jpeg', quality: 85 }); frames.push({ t, f }); } catch (e) { /* navigation in flight: skip */ await sleep(60); } } })();
+  const poller = (async () => { while (recording) { const t = Date.now() / 1000; try { const f = path.join(frameDir, String(frames.length).padStart(6, '0') + '.jpg'); await Promise.race([page.screenshot({ path: f, type: 'jpeg', quality: 85 }), sleep(4000).then(() => { throw new Error('screenshot timeout'); })]); frames.push({ t, f }); } catch (e) { /* navigation in flight: skip */ if (process.env.VIDEO_DEBUG && !global.__se) { global.__se = 1; console.log('  screenshot error: ' + e.message.slice(0, 200)); } await page.bringToFront().catch(() => {}); await sleep(60); } } })();
   await ctx.caption(' ').catch(() => {}); await sleep(900);
   const starts = [];
   for (let i = 0; i < beats.length; i++) {
