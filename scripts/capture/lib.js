@@ -6,7 +6,7 @@ const BASE = 'https://' + HOST;
 async function open(who, opts = {}) {
   const jar = JSON.parse(fs.readFileSync(__dirname + '/cookies.json', 'utf8'))[who];
   const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: 'new',
-    args: ['--hide-scrollbars', '--force-device-scale-factor=1'], defaultViewport: { width: opts.width || 1440, height: opts.height || 900 } });
+    args: ['--hide-scrollbars', '--force-device-scale-factor=1', '--disable-features=RenderDocument,BackForwardCache,ProactivelyThrottleBackgroundTabs'], defaultViewport: { width: opts.width || 1440, height: opts.height || 900 } });
   const page = await browser.newPage();
   await page.setCookie(...Object.entries(jar).filter(([k]) => k !== '_user').map(([name, value]) => ({ name, value, domain: HOST, path: '/', secure: true })));
   await page.evaluateOnNewDocument(() => { try { localStorage.setItem('bp-mode', 'light'); } catch (e) {} });
