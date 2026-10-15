@@ -6,7 +6,18 @@ sidebar_position: 1
 slug: /Guideline/Admin/manage-template-assessment
 ---
 
-This feature is for SA
+This feature is for SA, ML, Master Admin, Center Admin
+
+## Finding a Template (Search & Filter)
+
+The Templates list can be searched by name and filtered by [Program](../Program/manage-program.md) — useful
+once you have many templates across different Programs.
+
+![Assessment Templates list, showing the Program column and "All programs" filter](./img/manage-template-assessment-program-column.png)
+
+- Use the **Search by name** box and/or the **All programs** dropdown, then click **Filter**.
+- The **Program** column shows each template's attached Program, or **"Not assigned"** if none is set yet.
+
 ## Creating a New Assessment Template
 
 1.  **Navigate** to the [ACP](https://acp.brainfitstudio.com/acp).
@@ -21,11 +32,22 @@ This feature is for SA
 4.  Fill in the following information for each field:
     * **Name:** Enter the desired name for the template.
     * **Description:** Provide a brief description of the template.
+    * **Program:** Optional. Attaches this template to one of your own Master Licensee's
+      [Programs](../Program/manage-program.md) — see the note below for what this affects. Leave as
+      **"-- No program assigned --"** if you don't need it yet; it can be set later from **Edit**.
     * **Template is active** checkbox: Check to enable the template; uncheck to disable it.
 
-![Image](./img/manage-template-assessment-6a.png)
+![Image](./img/manage-template-assessment-program-field.png)
 
 5.  Click **Create Assessment template** to save the new template.
+
+:::info Program is manual-only, and affects the printed PDF header
+There's no automatic matching or bulk backfill — every template's Program is set by hand, at whatever pace
+you choose. Once a Program is attached, printed Assessment Report Card PDFs for that template show that
+Program's Type in the header (e.g. "BrainFit Scholar") instead of the generic default. See
+[Assessment Print-Out](../Assessment_PrintOut/download-assessment-report-card.md) for what this looks like
+on the actual PDF, and [Managing Programs](../Program/manage-program.md) for how to set up a Program first.
+:::
 
 ## Editing a Assessment Template
 1.  **Navigate** to the [ACP](https://acp.brainfitstudio.com/acp).
@@ -40,6 +62,8 @@ This feature is for SA
 4.  Fill in the following information for each field:
     * **Name:** Enter the desired name for the template.
     * **Description:** Provide a brief description of the template.
+    * **Program:** Optional — see the note above under "Creating a New Assessment Template" for what
+      attaching a Program does to the printed PDF header.
     * **Template is active** checkbox: Check to enable the template; uncheck to disable it.
 
 ![Image](./img/manage-template-assessment-6b.png)
