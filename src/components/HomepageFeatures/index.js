@@ -15,14 +15,14 @@ const FeatureList = [
     link: '/docs/brainfit-singapore'
   },
   {
-    title: 'Guideline',
+    title: 'BrainFit HQ',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Detailed guidelines for the main functions in the admin page.
+        Step-by-step guides for BrainFit HQ, CoachSpace and Teacher Tools.
       </>
     ),
-    link: '/docs/category/guideline'
+    link: '/docs/category/brainfit-hq'
   },
   {
     title: 'Processes',
