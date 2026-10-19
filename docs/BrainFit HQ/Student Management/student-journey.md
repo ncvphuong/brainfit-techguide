@@ -2,7 +2,8 @@
 id: bhq-student-journey
 title: Read the Student Journey page
 sidebar_label: Student Journey
-sidebar_position: 1
+sidebar_position: 5
+slug: /BrainFit HQ/Student Journey/bhq-student-journey
 ---
 # Read the Student Journey page
 Student Journey shows what happens to students who **start as Trial or CogMAP**: how many of them enrol, how long it takes, and who is still waiting. Use it to see how well Trial and CogMAP turn into enrolments, and to find the students to follow up.

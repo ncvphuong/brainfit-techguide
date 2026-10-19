@@ -2,7 +2,8 @@
 id: bhq-student-journey-activity-log
 title: See a student's type changes
 sidebar_label: Type changes in the Activity Log
-sidebar_position: 2
+sidebar_position: 6
+slug: /BrainFit HQ/Student Journey/bhq-student-journey-activity-log
 ---
 # See a student's type changes
 Every journey on the [Student Journey page](./student-journey.md) comes from the student's own history. You can read that history on the student's page.
