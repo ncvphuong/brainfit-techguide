@@ -17,6 +17,13 @@ def remove_demo!
   Audited::Audit.where(auditable_type: 'User', auditable_id: ids).delete_all
   StudentCustomerAssociation.where(student_id: ids).delete_all
   GameStatistic.where(user_id: ids).find_each(&:destroy)
+  # every other table keyed to these throw-away students (BP calculations, rankings, level flags, ...): demo ids only
+  cn = ActiveRecord::Base.connection
+  cn.select_rows("select table_name, column_name from information_schema.columns where table_schema='public' and column_name in ('user_id','student_id') and table_name not in ('users','audits','student_type_events','student_customer_associations')").each do |t, c|
+    cn.execute("delete from #{cn.quote_table_name(t)} where #{cn.quote_column_name(c)} in (#{ids.join(',')})")
+  rescue ActiveRecord::StatementInvalid => e
+    puts "skip #{t}.#{c}: #{e.message[0, 80]}"
+  end
   Coachspace::Onboarding.where(student_id: ids).delete_all if defined?(Coachspace::Onboarding)
   User.unscoped.where(id: ids).each(&:delete)
   puts "removed #{ids.size} demo students"
