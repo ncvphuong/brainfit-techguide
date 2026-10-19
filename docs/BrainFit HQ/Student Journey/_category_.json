@@ -1,0 +1,8 @@
+{
+  "label": "Student Journey",
+  "position": 9,
+  "link": {
+    "type": "generated-index",
+    "description": "See how Trial and CogMAP students move on to Enrolled, and who is still waiting."
+  }
+}
