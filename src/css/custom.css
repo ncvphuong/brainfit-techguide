@@ -28,3 +28,11 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Navbar logo: the BF mark Brain HQ uses (.bp-logo-mark): rounded square, hairline border, white behind it so it reads in dark mode too. */
+.navbar__logo img {
+  border-radius: 9px;
+  object-fit: cover;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--ifm-color-emphasis-300);
+}

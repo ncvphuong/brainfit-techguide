@@ -10,9 +10,9 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'BraintFit Tech Guide',
-  tagline: 'BraintFit Technical Documentation',
-  favicon: 'img/BrainFit.png',
+  title: 'BrainFit Tech Guide',
+  tagline: 'BrainFit Technical Documentation',
+  favicon: 'img/bf-mark.jpg',
 
   // Set the production url of your site here
   url: 'https://brainfit-guide-saurus.powerdigital.sg/',
@@ -68,10 +68,10 @@ const config = {
       // Replace with your project's social card
       image: 'img/BrainFit.png',
       navbar: {
-        title: 'BraintFit Tech Guide',
+        title: 'BrainFit Tech Guide',
         logo: {
-          alt: 'BraintFit Tech Guide Logo',
-          src: 'img/BrainFit.png',
+          alt: 'BrainFit Tech Guide Logo',
+          src: 'img/bf-mark.jpg',
         },
         
 
