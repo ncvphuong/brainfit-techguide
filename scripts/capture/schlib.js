@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer-core');
 const fs = require('fs');
 const HOST = 'scheduling.dev3.powerdigital.sg';
 async function openSch(opts = {}) {
-  const c = JSON.parse(fs.readFileSync(__dirname + '/sch_cookie.json', 'utf8'));
+  const c = JSON.parse(fs.readFileSync(__dirname + '/' + (opts.cookie || 'sch_cookie.json'), 'utf8'));
   const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: 'new', args: ['--hide-scrollbars'], defaultViewport: { width: opts.width || 1600, height: opts.height || 900 } });
   const page = await browser.newPage();
   await page.setCookie({ name: c.name, value: c.value, domain: HOST, path: '/', secure: true });
