@@ -15,6 +15,8 @@ Every Assessor Note is filled in on a form. The **Forms** tab is where those for
 
 **Who can do what:** Super Admin, Master Licensee, Master Admin and Centre Admin can create forms. Only the form's author and Super Admin can edit or delete it. You only see the forms of your own centres.
 
+A form can also be a general questionnaire that is not about a student, and can be opened with a public link, no login needed: see [Questionnaires and public links](./assessor-forms-public.md).
+
 ## 1. Open the Forms tab
 
 Go to **Accounts → Assessor Notes** and click the **Forms** tab. The list shows each form's language, the centres that use it, its author, the number of questions, how many notes were written with it, and whether it is **On** or **Off**.

@@ -21,3 +21,4 @@ yarn-error.log*
 scripts/capture/tt_token
 scripts/capture/login_cookies.json
 scripts/capture/cs_ids.json
+scripts/capture/af_*.txt
