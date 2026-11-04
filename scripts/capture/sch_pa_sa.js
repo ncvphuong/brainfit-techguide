@@ -6,8 +6,9 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const maskLink = page => page.evaluate(() => document.querySelectorAll('input').forEach(i => { if (/public\/availability/.test(i.value)) i.value = 'https://scheduling.brainfitstudio.com/public/availability/••••••••••••••••/'; }));
 (async () => {
   const { browser, page } = await openSch({ width: 1440, height: 900, cookie: 'sch_cookie_sa.json' });
-  await goSch(page, '/classrooms/class-groups/availability/'); await sleep(2500); await maskLink(page);
-  await page.evaluate(() => { const b = [...document.querySelectorAll('button,a')].find(e => /Brian chat/.test(e.textContent)); b && b.setAttribute('data-tg', '1'); const c = [...document.querySelectorAll('button,a')].find(e => /Brian conversations/.test(e.textContent)); c && c.setAttribute('data-tg2', '1'); });
+  await goSch(page, '/classrooms/class-groups/availability/'); await sleep(2500);
+  await page.click('#public-link-btn'); await sleep(1000); await maskLink(page);
+  await page.evaluate(() => { const b = [...document.querySelectorAll('button,a')].find(e => e.offsetParent && /Brian chat/.test(e.textContent)); b && b.setAttribute('data-tg', '1'); const c = [...document.querySelectorAll('button,a')].find(e => e.offsetParent && /Brian conversations/.test(e.textContent)); c && c.setAttribute('data-tg2', '1'); });
   await mark(page, '[data-tg]', { pad: 4 }); await mark(page, '[data-tg2]', { pad: 4 }); await page.screenshot({ path: `${OUT}/pa-7.png` }); await clear(page);
   await goSch(page, '/classrooms/brian-conversations/'); await sleep(1200);
   await page.screenshot({ path: `${OUT}/pa-8.png` });

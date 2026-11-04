@@ -31,9 +31,13 @@ The numbers can change at any time. The page tells visitors to contact the centr
 
 ## Manage the link (staff)
 
-Open **Class Groups → Class Availability** and select the centre at the top. The **Public link for this centre** panel is at the top of the page. Super Admin, Master Licensee, Master Admin and Centre Admin can use it.
+Open **Class Groups → Class Availability** and select the centre at the top. Click **Public Link** at the top right of the page. Super Admin, Master Licensee, Master Admin and Centre Admin can use it.
 
-![The Public link panel](./img/sch-public-1.png)
+![The Public Link button](./img/sch-public-1.png)
+
+A window opens with the link for the selected centre. Close it with the X, by clicking outside it, or with Esc.
+
+![The Public link window](./img/sch-public-4.png)
 
 - **Create link** appears if the centre has no link yet.
 - **Copy link** copies the address to send to families.
@@ -56,12 +60,12 @@ If Brian cannot answer (for example it is switched off, or the monthly limit is 
 
 ## Super Admin only: Brian ON/OFF and the conversations log
 
-Two more controls appear in the Public link panel for a Super Admin:
+Two more controls appear in the same Public link window for a Super Admin:
 
 - **Brian chat: ON / OFF** switches Brian for the selected centre. The page itself keeps working when Brian is off.
 - **Brian conversations** opens the log of every conversation: the centre, the date, and each question and answer. It also shows this month's spend against the **30 USD monthly cap**. When the cap is reached, Brian stops answering until the next month and the availability page keeps working.
 
-![Brian chat ON/OFF and Brian conversations](./img/sch-public-7.png)
+![Brian chat ON/OFF and Brian conversations in the Public link window](./img/sch-public-7.png)
 ![The conversations log, one conversation opened](./img/sch-public-8.png)
 
 ## Safety

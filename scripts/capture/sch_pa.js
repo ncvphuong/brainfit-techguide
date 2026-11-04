@@ -8,8 +8,10 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
   // staff side as Master Admin
   const { browser: sb, page } = await openSch({ width: 1440, height: 900 });
   await goSch(page, '/classrooms/class-groups/availability/'); await sleep(2500);
+  await mark(page, '#public-link-btn', { pad: 5 }); await page.screenshot({ path: `${OUT}/pa-1.png` }); await clear(page);
+  await page.click('#public-link-btn'); await sleep(1000);
   await page.evaluate(() => document.querySelectorAll('input').forEach(i => { if (/public\/availability/.test(i.value)) i.value = 'https://scheduling.brainfitstudio.com/public/availability/••••••••••••••••/'; })); // never show the secret code
-  await page.screenshot({ path: `${OUT}/pa-1.png` });
+  await page.screenshot({ path: `${OUT}/pa-10.png` }); // the Public link window
   await sb.close();
   // visitor side, no session
   const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: 'new', args: ['--hide-scrollbars'] });
