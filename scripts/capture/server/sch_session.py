@@ -7,5 +7,6 @@ d = json.load(open('/home/deploy/.sch_user.json'))
 s = SessionStore()
 s['brainfit_token'] = d['token']; s['brainfit_verified_at'] = time.time(); s['brainfit_user'] = d; s['current_center_id'] = 132; s['user_timezone'] = 'Asia/Singapore'
 s.create()
-open('/home/deploy/.sch_cookie', 'w').write(json.dumps({'name': settings.SESSION_COOKIE_NAME, 'value': s.session_key}))
+import os
+open(os.environ.get('SCH_COOKIE_OUT', '/home/deploy/.sch_cookie'), 'w').write(json.dumps({'name': settings.SESSION_COOKIE_NAME, 'value': s.session_key}))
 print('session ok', settings.SESSION_COOKIE_NAME, settings.SESSION_ENGINE)

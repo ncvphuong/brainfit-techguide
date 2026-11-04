@@ -3,3 +3,4 @@ node_modules/
 out/
 package*.json
 sch_cookie.json
+sch_cookie_sa.json
