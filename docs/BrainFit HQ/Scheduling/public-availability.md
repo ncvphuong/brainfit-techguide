@@ -8,7 +8,7 @@ sidebar_position: 6
 
 Each centre can have a **public link** to a page that shows which weekly classes still have space. Nobody has to log in to open it. A parent can tap a class and send an **enrolment request**, or ask **Brian**, a small assistant on the page, to help. The centre gets the request by email and on a screen in Scheduling. This guide covers the link, what parents see, the emails, how staff handle requests, and what Brian can and cannot do.
 
-**Watch (about 3 minutes):**
+**Watch (about 5 minutes):**
 
 <video controls preload="metadata" width="100%">
   <source src="/video/hq/sch-public.mp4" type="video/mp4" />
