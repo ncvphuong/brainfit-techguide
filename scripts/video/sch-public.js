@@ -48,7 +48,7 @@ makeVideo({
         await c.type('#wl-note', 'Prefers Saturday mornings. (sample)'); await c.sleep(800);
         const s = await c.tag(`return document.querySelector('#wl-send')`, 'sd'); await c.hl(s, 5); await c.glide(s); await c.sleep(700); await c.unhl(); await c.click(s); await c.sleep(3500);
       } },
-    { say: 'The parent gets a thank-you email, and the class trainers, the centre front desk and the centre admins get a New enrolment enquiry email. In Scheduling, open Class Groups, Enrolment Request. Admin roles see every request with the parent, the child, the class and a status: New, Contacted, Converted or Dismissed. Contact the parent, update the status and add a note. Enrolling the child still happens in the usual way.',
+    { say: 'The parent gets a thank-you email, and the class trainers and the centre front desk email get a New enrolment enquiry email. In Scheduling, open Class Groups, Enrolment Request. Admin roles see every request with the parent, the child, the class and a status: New, Contacted, Converted or Dismissed. Contact the parent, update the status and add a note. Enrolling the child still happens in the usual way.',
       run: async c => {
         await c.go('/classrooms/class-groups/availability/'); await c.sleep(1500);
         const m = await c.tag(`return document.querySelector('#class-groups-menu-button')`, 'mn'); await c.click(m); await c.sleep(800);
@@ -57,10 +57,19 @@ makeVideo({
         const t = await c.tag(`return document.querySelector('tbody tr, table')`, 'tb'); await hold(c, t, 4, 3500);
         const f = await c.tag(`return document.querySelector('a[href="?status=new"]')?.parentElement`, 'ft'); if (f) await hold(c, f, 4, 2500);
       } },
-    { say: 'Visitors can also ask Brian, the assistant at the bottom right. Brian only knows this centre\'s classes for the current term and the next term. He answers in English, Vietnamese, Bahasa Indonesia, Thai or Simplified Chinese, and he can help a parent send an enrolment request.',
+    { say: 'Visitors can also ask Brian, the assistant at the bottom right. Brian only knows this centre\'s classes for the current term and the next term, and he talks about Available or Full, never numbers. He answers in English, Vietnamese, Bahasa Indonesia, Thai or Simplified Chinese, and he can help a parent send an enrolment request.',
       run: async c => { await c.go(LINK); await c.sleep(2000); const f = await c.tag(`return document.querySelector('#brian-fab')`, 'fab'); await c.click(f); await c.sleep(1200); await ask(c, 'Is there a Saturday morning class with space?'); await c.sleep(1500); } },
     { say: 'When a parent wants to enrol, Brian asks for the missing details, reads them back, and sends the request only after the parent says yes. The request appears on the Enrolment Request screen with the source Brian. Brian cannot promise a place, and the visitor is told that chats are recorded.',
       run: async c => { await ask(c, 'I would like to enrol my child in the Saturday 2pm class.'); await ask(c, 'Sample Parent, sample.brian@example.com, +65 9123 4567, child Sample Child, age 8. No start date.'); await c.sleep(2500); } },
+    { say: 'Brian can also pass a visitor to the front desk. If someone asks to talk to a real person, Brian asks for their name, an email or phone, and what they need, reads it back, and after a yes tells them the front desk has been notified. These show at the bottom of the Enrolment Request screen, under Contact requests from Brian, with a status and a staff note.',
+      run: async c => {
+        await c.sleep(15000); await ask(c, 'Can I talk to a real person? I have a question about prices.'); await c.sleep(15000);
+        await ask(c, 'Sample Parent, sample.contact@example.com. I want to know the price of the Saturday class.'); await c.sleep(15000);
+        await ask(c, 'Yes, that is correct.'); await c.sleep(2000);
+        await c.go('/classrooms/public-waitlist-requests/'); await c.sleep(2000);
+        await c.page.evaluate(() => { const h = [...document.querySelectorAll('h2,h3,h4')].find(e => /Contact requests from Brian/i.test(e.textContent)); if (h) h.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); await c.sleep(1500);
+        const t = await c.tag(`return [...document.querySelectorAll('h2,h3,h4')].find(e => /Contact requests from Brian/i.test(e.textContent))?.parentElement`, 'cr'); if (t) await hold(c, t, 4, 3500);
+      } },
     { say: 'Only a Super Admin sees two more controls in the Public Link window. Brian chat ON or OFF switches Brian for a centre, and the page itself keeps working when Brian is off. Brian conversations opens the log of every conversation, with the spend against the 30 dollar monthly cap. Chats are recorded, so tell visitors not to type personal details unless they are sending a request.',
       run: async c => {
         await c.page.setCookie({ name: SA.name, value: SA.value, domain: 'scheduling.dev3.powerdigital.sg', path: '/', secure: true });

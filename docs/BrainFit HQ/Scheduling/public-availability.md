@@ -45,6 +45,7 @@ Anyone who has the link can open the page. There is no login. Treat the link lik
 - **Timezone:** times are shown in the visitor's own timezone, so a class can appear on the neighbouring day for someone far away.
 - **No personal data:** no student names, no teacher names and no ids appear on the page.
 - On a computer the page is a weekly calendar. On a phone it is a list by day.
+- Under the centre name the page says: **Click on a preferred class and send us a message to book a spot.**
 
 ![What a visitor sees on a computer](./img/sch-public-3.png)
 ![The same page on a phone](./img/sch-public-4.png)
@@ -71,7 +72,7 @@ and click **Submit**.
 ![The Interest to Enroll pop-up, filled in with sample details](./img/sch-public-7.png)
 ![The country picker for the phone number](./img/sch-public-8.png)
 
-The small print says **This is an enrolment request, not a confirmed place.** Nothing is held for the child and nothing is created in HQ. The centre follows up with the parent and enrols them in the usual way. After Submit, the parent sees **Thank you for your interest. The centre will contact you.**
+The small print says **This is an enrolment request, not a confirmed place.** Nothing is held for the child and nothing is created in HQ. The centre follows up with the parent and enrols them in the usual way. After Submit, the parent sees **Thank you for your interest. Someone from the centre will be contacting you soon.**
 
 ![The thank-you message after Submit](./img/sch-public-9.png)
 
@@ -83,11 +84,11 @@ Every request sends two emails.
 
 ![The thank-you email the parent receives (sample)](./img/sch-public-10.png)
 
-**To the centre:** an email titled **New enrolment enquiry - (class, time)**. It goes to the class's trainers and to the centre's front desk email (the centre contact email from HQ, once it is filled in), with the centre admins in cc. It lists the class, parent, phone, email, child, preferred start date and message, and asks the team to follow up with the parent.
+**To the centre:** an email titled **New enrolment enquiry - (class, time)**. It goes to the class group's **trainers** and to the centre's **contact email** (the front desk) from HQ, once it is filled in. Centre admins are **not** copied. It lists the class, parent, phone, email, child, preferred start date and message, and asks the team to follow up with the parent. If the centre has no contact email in HQ and the class has no trainer email, **nobody is emailed**. The request is still saved, and the Enrolment Request screen says no email was sent, so someone must check that screen.
 
 ![The enquiry email the centre receives (sample)](./img/sch-public-11.png)
 
-Both emails end with a footer that shows the centre name, address, email and phone **when HQ has them**. Centre admins fill these in on the Brain HQ **Centre contact** page. Until a centre has filled them in, its emails show only what exists. Most centres are still empty.
+Both emails end with a footer that shows the centre name, address, email and phone **when HQ has them**. Centre admins fill these in on the Brain HQ **Centre contact** page. Until a centre has filled them in, its emails show only what exists, and the front desk gets no enquiry email. Most centres are still empty, so ask your centre admin to fill in **Centre contact** first.
 
 ## 5. Staff: the Enrolment Request screen
 
@@ -98,6 +99,8 @@ Open **Class Groups → Enrolment Request** (the globe icon). It is shown only t
 The **Public enrolment requests** page lists every request for the selected centre: when it came in and whether it came from the **Form** or from **Brian**, the class, the parent's contact, the child (with the preferred start date and message, if any), and a status. Use the filters **All, New, Contacted, Converted** and **Dismissed** to focus.
 
 ![The Public enrolment requests page](./img/sch-public-13.png)
+
+The class on each row is a link to its class group. Each row also says whether the trainer was emailed.
 
 For each request:
 
@@ -111,7 +114,7 @@ Enrolling the child still happens in the usual way. The page does not enrol anyo
 
 Visitors open Brian with the round button at the bottom right of the page.
 
-- Brian only knows **this centre's classes for the current term and the next term**. It cannot see names and cannot promise a place. It tells the visitor to contact the centre.
+- Brian only knows **this centre's classes for the current term and the next term**. He talks about **Available** or **Full** only, never numbers. He cannot see names and cannot promise a place. He tells the visitor to contact the centre.
 - Brian answers in **English, Vietnamese, Bahasa Indonesia, Thai or Simplified Chinese**, in the language the visitor writes in.
 - A question can be up to **300 characters**. There are limits on how many questions one visitor can ask in a short time.
 - The chat tells visitors that **chats are recorded** and not to share personal details unless they want to send an enrolment request.
@@ -122,6 +125,15 @@ Visitors open Brian with the round button at the bottom right of the page.
 **Brian can also help a parent send an enrolment request.** Brian asks for the parent's name, email, phone, the child's name and age, and an optional preferred start date. He then **reads the details back** and sends the request **only after the parent says yes**. The request appears on the Enrolment Request screen with the source **Brian**, and the same two emails are sent.
 
 ![Brian reads the details back before sending](./img/sch-public-16.png)
+
+**Brian can pass a visitor to the front desk.** If a visitor asks to talk to a person, for example "Can I talk to a real person? I have a question about prices.", Brian asks for their name, an email or phone, and what they need. He reads it back and, after the visitor says yes, tells them the front desk has been notified. The centre's contact email gets an email. Brian does not promise when someone will reply.
+
+![Brian offers to pass a question to the front desk](./img/sch-public-19.png)
+![Brian confirms the front desk has been notified](./img/sch-public-20.png)
+
+These appear at the bottom of the Enrolment Request screen, under **Contact requests from Brian**. Each has the visitor's contact details, what they asked, a status (**New**, **Handled** or **Dismissed**) and a staff note. If the centre has no contact email in HQ, no email is sent, and the entry says **Email not sent**.
+
+![Contact requests from Brian on the Enrolment Request screen](./img/sch-public-21.png)
 
 If Brian cannot answer (for example it is switched off, or the monthly limit is reached), the page still shows the availability.
 
@@ -139,9 +151,11 @@ Two more controls appear in the Public link window for a Super Admin:
 
 The attendance lists (the calendar session pop-up and the class group attendance window) now show each child's **date of birth and age** under the name.
 
+![Attendance window with each child's date of birth and age](./img/sch-public-22.png)
+
 ## Safety
 
 - The link is a secret address, not a login. Anyone who has it can see the page. If it spreads further than you wanted, use **New link** and update every place it was posted.
 - The page shows only class names, times and Available or Full. Never put personal details in a class name.
-- A request holds a parent's name, email, phone and child's name. Only staff who need to follow it up should open the Enrolment Request screen, and the emails should be handled like any other parent contact.
+- A request holds a parent's name, email, phone and child's name. Only staff who need to follow it up should open the Enrolment Request screen, and the emails should be handled like any other parent contact. Make sure the centre's **contact email** in HQ is filled in and watched by someone, because it is what the front desk receives.
 - Brian's chats are recorded. Tell visitors not to type personal details into the chat unless they are sending an enrolment request.
